@@ -1,5 +1,4 @@
 /*Processos de Instalação Vite*/
-
 npm create vite@latest
 name: indaia-cult
 Framework: React
@@ -23,6 +22,20 @@ npm install vite @vitejs/plugin-react --save-dev
 /*Comando de Permissões*/
 Get-ExecutionPolicy
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+
+/*Extensões de Ajuda*/
+(Caso apareça esse tipo de mensagem pra vc "Property 'div' does not exist on type 'JSX.IntrinsicElements'", use esses plugins)
+ESLint
+JSDoc Generator
+TypeScript Importer
+JavaScript and TypeScript Nightly
+ES7+ React/Redux/React-Native snippets
+
+/**/
+
+
+/**/
 
 
 /**/

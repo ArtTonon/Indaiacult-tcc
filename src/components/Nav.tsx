@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import LoginButton from "./loginButton";
+import LoginButton from "./LoginButton";
 import ToggleThemeButton from "./ToggleThemeButton";
 
 const NavLinks = () => {
