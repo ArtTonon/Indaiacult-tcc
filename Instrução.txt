@@ -1,0 +1,28 @@
+/*Processos de Instalação Vite*/
+
+npm create vite@latest
+name: indaia-cult
+Framework: React
+Variant: TypeScript + SWC
+cd indaia-cult
+npm install
+npm run dev
+
+
+/*Instalações Extras*/
+npm install tailwindcss
+npm install react-router-dom
+npm install axios
+npm install lucide-react
+npm install -g typescript
+tsc --init (Caso queira instalar um arquivo tsconfig.json)
+echo > postcss.config.js (instalar um arquivo postcss.config.js)
+npm install vite @vitejs/plugin-react --save-dev
+
+
+/*Comando de Permissões*/
+Get-ExecutionPolicy
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+
+/**/
