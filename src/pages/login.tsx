@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
-import { Divide } from "lucide-react";
+import { } from "lucide-react";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -10,7 +10,7 @@ const Login: React.FC = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://localhost:8000/login", {
+      const response = await axios.post("http://localhost:5175/login", {
         email,
         password,
       });

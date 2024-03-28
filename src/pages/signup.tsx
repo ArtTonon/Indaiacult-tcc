@@ -13,7 +13,7 @@ const SignUp: React.FC = () => {
 
   const handleSignUp = async () => {
     try {
-      const response = await axios.post("http://localhost:8000/registrar", {
+      const response = await axios.post("http://localhost:5175/registrar", {
         name,
         email,
         password,
