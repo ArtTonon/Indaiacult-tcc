@@ -1,3 +1,8 @@
+/*EXTRAS pro VSCode*/
+Node.js
+Git Branch
+
+
 /*Processos de Instalação Vite*/
 npm create vite@latest
 name: indaia-cult
@@ -13,6 +18,7 @@ npm install tailwindcss
 npm install react-router-dom
 npm install axios
 npm install lucide-react
+npm install autoprefixer
 npm install -g typescript
 tsc --init (Caso queira instalar um arquivo tsconfig.json)
 echo > postcss.config.js (instalar um arquivo postcss.config.js)
@@ -31,6 +37,36 @@ JSDoc Generator
 TypeScript Importer
 JavaScript and TypeScript Nightly
 ES7+ React/Redux/React-Native snippets
+
+
+/*GitHub processos*/
+Criar repositório no Github(Sem Nada)
+git init -b main
+git add .
+git commit -m "First Commit"
+git remote add origin URL
+git remote -v
+git push origin main
+Login GitHub
+
+
+/*Clonar Github*/
+git clone URL
+git pull
+
+
+/*Atualizar GitHub*/
+(Atualizar Repositorio)
+git add .
+git commit -m "..."
+git push
+
+(Atualizar Projeto)
+git pull [caso tenha sistema git]
+
+
+/**/
+
 
 /**/
 
