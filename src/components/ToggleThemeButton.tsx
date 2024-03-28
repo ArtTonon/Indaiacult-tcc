@@ -30,7 +30,7 @@ const ToggleThemeButton = () => {
       >
         {icon ? (
           <Sun
-            color="#fff"
+            color=" #fff"
             className="dark:border-white"
             strokeWidth={1.5}
             size={44}
