@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import LoginButton from "./LoginButton";
 import ToggleThemeButton from "./ToggleThemeButton";
 
-const NavLinks = () => {
+const NavLinks = () => { 
   const isActive = (path: string) => {
     return window.location.pathname === path;
   };

@@ -1,4 +1,5 @@
 import Nav from "./Nav";
+import SearchBar from "./SearchBar";
 
 const NavBar = () => {
   return (
@@ -10,6 +11,7 @@ const NavBar = () => {
             Cult.
           </span>
         </a>
+        <SearchBar />
         <Nav />
       </header>
     </>
