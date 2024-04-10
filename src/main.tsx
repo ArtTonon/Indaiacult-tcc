@@ -4,10 +4,12 @@ import App from "./App.tsx";
 import "./App.css";
 import Layout from "./layout.tsx";
 import { BrowserRouter, Routes, Route, LinkProps } from "react-router-dom";
-import Landing from "./pages/landing.tsx";
-import Login from "./pages/login.tsx";
-import SignUp from "./pages/signup.tsx";
-import Artistas from "./pages/artistas.tsx";
+import LoginPage from "./pages/login.tsx";
+import SignUpPage from "./pages/signup.tsx";
+import ArtistasPage from "./pages/artists.tsx";
+import ObrasPage from "./pages/obras.tsx";
+import SobrePage from "./pages/sobre.tsx";
+import LandingPage from "./pages/landing.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -15,10 +17,12 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <BrowserRouter>
         <Routes>
           <Route element={<App />} path="/a" />
-          <Route element={<Landing />} path="/" />
-          <Route element={<Login />} path="/login" />
-          <Route element={<SignUp />} path="/signup" />
-          <Route element={<Artistas />} path="/artistas" />
+          <Route element={<LandingPage />} path="/" />
+          <Route element={<LoginPage />} path="/login" />
+          <Route element={<SignUpPage />} path="/cadastro" />
+          <Route element={<ArtistasPage />} path="/artists" />
+          <Route element={<ObrasPage />} path="/obras" />
+          <Route element={<SobrePage />} path="/sobre" />
         </Routes>
       </BrowserRouter>
     </Layout>

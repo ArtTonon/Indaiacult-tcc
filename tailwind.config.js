@@ -4,6 +4,9 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      backgroundImage: {
+        cardDefault: "url('src/assets/UserBanner.png')",
+      },
       fontFamily: {
         montserrat: ["'Montserrat'", "sans-serif"],
       },
@@ -11,6 +14,7 @@ export default {
         main: "#F87060",
         lightblue: "#3E8989",
         darkblue: "#102542",
+        diffBlack: "##80808080",
       },
     },
   },
