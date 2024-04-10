@@ -34,11 +34,12 @@
 			<div class="row full-height justify-content-center">
 				<div class="col-12 text-center align-self-center py-5">
 					<div class="section pb-5 pt-5 pt-sm-2 text-center">
-						<h6 class="mb-0 pb-3"><span>Logar </span> 
-							<a href="signup.html"><span>Inscrever</span></a></h6>
+						<h6 class="mb-0 pb-3"><span>Logar </span><span>Inscrever</span></h6>
+			          	<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+			          	<label for="reg-log"></label>
 						<div class="card-3d-wrap mx-auto">
 							<div class="card-3d-wrapper">
-								<div class="card-login">
+								<div class="card-front">
 									<div class="center-wrap">
 										<div class="section text-center">
 											<h4 class="mb-4 pb-3">Logar</h4>
@@ -51,13 +52,7 @@
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
 											<a href="" class="btn mt-4">Login</a>
-											<div class="flex flex-col gap-3"> <br/>
-												<button class="full-google" onclick="submitGoogle()">
-													<img src="google.svg" width="24" height="24" alt="Google Logo">
-													Continue com o Google
-												</button>
-											</div>
-                      						<p class="mb-0 mt-4 text-center"><a href="senha.html" class="link">Esqueceu a senha?</a></p>
+                      						<p class="mb-0 mt-4 text-center"><a href="" class="link">Esqueceu a senha?</a></p>
 				      					</div>
 			      					</div>
 			      				</div>
@@ -68,13 +63,5 @@
 	      	</div>
 	    </div>
 	</div>
-	<div id="root"></div>
-    <script src="/@react-refresh"></script>
-    <script type="module">
-        import { createRoot } from 'react-dom';
-        import App from '../src/App.tsx'; // Importe o componente React que deseja renderizar
-
-        createRoot(document.getElementById('root')).render(<App />);
-    </script>
 </body>
 </html>

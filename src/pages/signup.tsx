@@ -14,7 +14,7 @@ const SignUp: React.FC = () => {
 
   const handleSignUp = async () => {
     try {
-      const response = await axios.post("http://localhost:5173/registrar", {
+      const response = await axios.post("http://localhost:5173/signup", {
         name,
         email,
         telephone,
@@ -43,7 +43,6 @@ const SignUp: React.FC = () => {
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
   />
-  <link rel="stylesheet" href="" />
   <div>
     <ul className="circles">
       <li/><li/><li/><li/><li/><li/>
@@ -59,16 +58,10 @@ const SignUp: React.FC = () => {
               <span>Logar </span>
               <span>Inscrever</span>
             </h6>
-            <input
-              className="checkbox"
-              type="checkbox"
-              id="reg-log"
-              name="reg-log"
-            />
             <label htmlFor="reg-log" />
             <div className="card-3d-wrap mx-auto">
               <div className="card-3d-wrapper">
-                <div className="card-back">
+                <div className="card-signup">
                   <div className="center-wrap">
                     <div className="section text-center">
                     <form className="flex flex-col items-center gap-8 justify-center w-full">
