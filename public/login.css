@@ -7,6 +7,11 @@ body{
 	background-color:#102542;
   margin: 0;
 }
+
+body > div { 
+  z-index: 0; 
+}
+
 a:hover {
 	text-decoration: none;
 }

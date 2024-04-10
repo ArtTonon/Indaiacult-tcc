@@ -10,7 +10,7 @@ const Login: React.FC = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://localhost:5173/login", {
+      await axios.post("http://localhost:5173/login", {
         email,
         password,
       });
@@ -18,6 +18,7 @@ const Login: React.FC = () => {
       setError("Credenciais inválidas");
     }
   };
+
   return (
     <>
   <link
@@ -29,31 +30,30 @@ const Login: React.FC = () => {
     href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
   />
   <link rel="stylesheet" href="login.css" />
-  <div>
-    <ul className="circles">
-      <li/><li/><li/><li/><li/><li/>
-      <li/><li/><li/><li/><li/><li/>
-      <li/><li/><li/><li/></ul>
-  </div>
-  <div className="section">
-    <div className="container">
+  {window.location.pathname !== '/login' && (
+        <div>
+          <div className="circles">
+            <li/><li/><li/><li/><li/><li/>
+            <li/><li/><li/><li/><li/><li/>
+            <li/><li/><li/><li/>
+          </div>
+        </div>
+      )}
+<div className="flex flex-col justify-center md:flex-row bg-white dark:bg-black items-center px-8">
       <div className="row full-height justify-content-center">
-        <div className="col-12 text-center align-self-center py-5">
           <div className="section pb-5 pt-5 pt-sm-2 text-center">
             <h6 className="mb-0 pb-3">
               <span>Logar </span>
               <a href="/signup">
               <span>Inscrever</span></a>
             </h6>
-            <label htmlFor="reg-log" />
             <div className="card-3d-wrap mx-auto">
-              <div className="card-3d-wrapper">
                 <div className="card-login">
                   <div className="center-wrap">
                     <div className="section text-center">
-                    <form className="flex flex-col items-center gap-20 justify-center w-full">
+                    <form className="flex flex-col items-center gap-8 justify-center w-full">
                       {error && <div className="text-red-500 mb-4">{error}</div>}
-                      <h4 className="mb-4 pb-3">Logar</h4>
+                      <h4 className="mb-3 pb-3">Logar</h4>
                       <div className="form-group">
                         <input
                           type="email"
@@ -93,9 +93,7 @@ const Login: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+
 </>
   );
 };
@@ -103,7 +101,6 @@ const Login: React.FC = () => {
 export default Login;
 
 /*
-
 return (
     <div>
       <div className="flex flex-col gap-9 items-center justify-center w-full">
@@ -139,5 +136,7 @@ return (
         </button>
       </form>
     </div>
-
+  );
+};
+export default Login;
 */

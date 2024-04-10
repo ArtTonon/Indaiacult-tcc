@@ -43,6 +43,7 @@ const SignUp: React.FC = () => {
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
   />
+  <link rel="stylesheet" href="login.css" />
   <div>
     <ul className="circles">
       <li/><li/><li/><li/><li/><li/>
@@ -55,7 +56,8 @@ const SignUp: React.FC = () => {
         <div className="col-12 text-center align-self-center py-5">
           <div className="section pb-5 pt-5 pt-sm-2 text-center">
             <h6 className="mb-0 pb-3">
-              <span>Logar </span>
+            <a href="/login">
+              <span>Logar</span></a>
               <span>Inscrever</span>
             </h6>
             <label htmlFor="reg-log" />
