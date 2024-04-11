@@ -156,6 +156,7 @@ h6 span{
   top: 0;
   left: 0;
   overflow: hidden;
+  z-index: -1;
 }
 
 li {
@@ -315,17 +316,4 @@ li {
 #b3a394
 #e3d985
 #3e8989
-
-.input{
-    border: none;
-    outline: none;
-    background: none;
-    width: 260px;
-    margin-top: 40px;
-    padding-right: 10px;
-    font-size: 17px;
-    color: #0ef;
-
-}
-
 */
