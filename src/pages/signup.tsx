@@ -56,7 +56,7 @@ const SignUp: React.FC = () => {
         <div className="col-12 text-center align-self-center py-5">
           <div className="section pb-5 pt-5 pt-sm-2 text-center">
             <h6 className="mb-0 pb-3">
-            <a href="/login">
+            <a href="/login.tsx">
               <span>Logar</span></a>
               <span>Inscrever</span>
             </h6>
@@ -118,6 +118,15 @@ const SignUp: React.FC = () => {
                         >
                           Criar conta
                       </button>
+                      <p className="mb-0 mt-4 text-center">
+                        <a
+                          className="oi"
+                          href="./artistas/artista.html"
+                          type="link"
+                        >
+                          Você é artista? Clique aqui
+                        </a>
+                      </p>
                       </form>
                     </div>
                   </div>

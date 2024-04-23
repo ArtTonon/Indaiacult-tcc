@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
+import { FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -19,11 +20,6 @@ const Login: React.FC = () => {
     
   };
 
-  const submitGoogle = () => {
-    // Adicione aqui a lógica para lidar com o login usando o Google
-    console.log("Submeter com o Google"); // Exemplo: apenas um log para demonstração
-};
-
   return (
     <>
       <link
@@ -34,6 +30,7 @@ const Login: React.FC = () => {
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
       />
+      <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
       <link rel="stylesheet" href="login.css" />
       <div>
         <ul className="circles">
@@ -46,17 +43,45 @@ const Login: React.FC = () => {
           <div className="row full-height justify-content-center">
               <div className="section pb-5 pt-5 pt-sm-2 text-center">
                 <h6 className="mb-0 pb-3">
-                  <span>Logar </span>
-                  <a href="/signup">
-                  <span>Inscrever</span></a>
+                  <span>-&gt; Logar </span>
+                  <a href="/signup.tsx">
+                  <span>Inscrever &lt;-</span></a>
                 </h6>
                 <div className="card-3d-wrap mx-auto">
+                <div className="card-3d-wrapper">
                     <div className="card-login">
                       <div className="center-wrap">
                         <div className="section text-center">
                         <form className="flex flex-col items-center gap-8 justify-center w-full">
                           {error && <div className="text-red-500 mb-4">{error}</div>}
                           <h4 className="mb-4 pb-3">Logar</h4>
+                          <div className="social">
+                        <div className="social-container">
+                        <a href="">
+                          <FaFacebook
+                             size={25}
+                             className="text-darkblue dark:text-lightblue hover:scale-110"
+                             aria-label="Ícone do Facebook, que irá te redirecionar à página oficial do indaiacult no Facebook"
+                          />
+                        </a></div>
+                        <div className="social-container">
+                        <a href="">
+                          <FaInstagram
+                              size={25}
+                              className="text-darkblue dark:text-lightblue hover:scale-110"
+                              aria-label="Ícone do Instagram, que irá te redirecionar à página oficial do indaiacult no Instagram"
+                          />
+                        </a></div>
+                        <div className="social-container">
+                        <a href="">
+                          <FaTiktok
+                              size={23}
+                              className="text-darkblue dark:text-lightblue hover:scale-110"
+                              aria-label="Ícone do TikTok, que irá te redirecionar à página oficial do indaiacult no TikTok"
+                          />
+                        </a>
+                        </div>
+                      </div>
                           <div className="form-group">
                             <input
                               type="email"
@@ -83,16 +108,10 @@ const Login: React.FC = () => {
                           >
                            Entrar
                           </button>
-                          <div className="flex flex-col gap-3">
-                            <button className="full-google" onClick={submitGoogle}>
-                              <img src="../assets/google.svg" width="24" height="24" alt="Google Logo" />
-                                 Continue com o Google
-                              </button>
-                          </div>
                           <p className="mb-0 mt-4 text-center">
-                            <a href="" className="link">
-                              Esqueceu a senha?
-                            </a>
+                        <a href="./senha/esqueceu/senha.html" type="link">
+                          Esqueceu a senha?
+                        </a>
                           </p>
                         </form>
                         </div>
@@ -102,6 +121,7 @@ const Login: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
           </div>
     </>
     
