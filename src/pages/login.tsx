@@ -32,7 +32,7 @@ const Login: React.FC = () => {
       <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
       <link rel="stylesheet" href="../../public/css/login.css" />
       <div className="circles">
-        <ul>
+        <ul className="dark:text-red-600">
           <li/><li/><li/><li/><li/><li/>
           <li/><li/><li/><li/><li/><li/>
           <li/><li/><li/><li/>
@@ -47,9 +47,9 @@ const Login: React.FC = () => {
                   <a href="./signup">
                   <span>Inscrever &lt;-</span></a>
                 </h6>
-                <div className="card-3d-wrap mx-auto">
-                <div className="card-3d-wrapper">
-                    <div className="card-login">
+                <div className="card-3d-wrap mx-auto dark:text-lightblue">
+                <div className="card-3d-wrapper ">
+                    <div className="card-login dark:bg-gray-800">
                       <div className="center-wrap">
                         <div className="section text-center">
                         <form className="flex flex-col items-center justify-center w-full">
@@ -60,7 +60,7 @@ const Login: React.FC = () => {
                         <a href="">
                           <FaFacebook
                              size={25}
-                             className="text-darkblue dark:text-lightblue hover:scale-110"
+                             className="text-lightblue dark:text-darkblue hover:scale-110"
                              aria-label="Ícone do Facebook, que irá te permitir inserir os dados da sua conta Facebook ao IndaiaCult"
                           />
                         </a></div>
@@ -68,7 +68,7 @@ const Login: React.FC = () => {
                         <a href="">
                           <FaInstagram
                               size={25}
-                              className="text-darkblue dark:text-lightblue hover:scale-110"
+                              className="text-lightblue dark:text-darkblue hover:scale-110"
                               aria-label="Ícone do Instagram, que irá te permitir inserir os dados da sua conta Instagram ao IndaiaCult"
                           />
                         </a></div>
@@ -76,7 +76,7 @@ const Login: React.FC = () => {
                         <a href="">
                           <FaGoogle
                               size={23}
-                              className="text-darkblue dark:text-lightblue hover:scale-110"
+                              className="text-lightblue dark:text-darkblue hover:scale-110"
                               aria-label="Ícone do Google, que irá te permitir inserir os dados da sua conta Google ao IndaiaCult"
                           />
                         </a>
@@ -85,7 +85,7 @@ const Login: React.FC = () => {
                           <div className="form-group">
                             <input
                               type="email"
-                              className="form-style"
+                              className="form-style dark:bg-gray-800"
                               placeholder="Email"
                               value={email}
                               onChange={(e) => setEmail(e.target.value)}
@@ -95,7 +95,7 @@ const Login: React.FC = () => {
                           <div className="form-group mt-3">
                             <input
                               type="password"
-                              className="form-style"
+                              className="form-style dark:bg-gray-800"
                               placeholder="Senha"
                               value={password}
                               onChange={(e) => setPassword(e.target.value)}
