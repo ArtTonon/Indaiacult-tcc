@@ -43,7 +43,7 @@ const SignUp: React.FC = () => {
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
   />
-  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="../../public/css/login.css" />
   <div>
     <ul className="circles">
       <li/><li/><li/><li/><li/><li/>
@@ -53,25 +53,23 @@ const SignUp: React.FC = () => {
   <div className="section">
     <div className="container">
       <div className="row full-height justify-content-center">
-        <div className="col-12 text-center align-self-center py-5">
           <div className="section pb-5 pt-5 pt-sm-2 text-center">
             <h6 className="mb-0 pb-3">
-            <a href="/login.tsx">
-              <span>Logar</span></a>
-              <span>Inscrever</span>
+            <a href="./login">
+              <span>-&gt; Logar</span></a>
+              <span>Inscrever &lt;-</span>
             </h6>
-            <label htmlFor="reg-log" />
             <div className="card-3d-wrap mx-auto">
               <div className="card-3d-wrapper">
                 <div className="card-signup">
                   <div className="center-wrap">
                     <div className="section text-center">
-                    <form className="flex flex-col items-center gap-8 justify-center w-full">
+                    <form className="flex flex-col items-center justify-center w-full">
                       {error && <div className="text-red-500 mb-4">{error}</div>}
                       {succesMessage && (
                         <div className="text-geen-500 mb-4">{succesMessage}</div>
                     )}
-                      <h4 className="mb-3 pb-3">Inscreva-se</h4>
+                      <h4 className="mb-3">Inscreva-se</h4>
                       <div className="form-group">
                         <input
                           type="text"
@@ -111,18 +109,17 @@ const SignUp: React.FC = () => {
                           onChange={(e) => setPassword(e.target.value)}
                         />
                         <i className="input-icon uil uil-lock-alt" />
-                      </div>
+                      </div> <br />
                       <button
                         onClick={handleSignUp}
                         className="bg-lightblue w-72 py-3 hover:bg-darkblue text-white rounded-md"
                         >
                           Criar conta
                       </button>
-                      <p className="mb-0 mt-4 text-center">
+                      <p className="mb-0 mt-2 text-center">
                         <a
-                          className="oi"
                           href="./artistas/artista.html"
-                          type="link"
+                          className="link"
                         >
                           Você é artista? Clique aqui
                         </a>
@@ -137,7 +134,6 @@ const SignUp: React.FC = () => {
         </div>
       </div>
     </div>
-  </div>
 </>
   );
 };

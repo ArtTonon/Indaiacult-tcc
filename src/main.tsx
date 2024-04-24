@@ -6,6 +6,8 @@ import Layout from "./layout.tsx";
 import { BrowserRouter, Routes, Route, LinkProps } from "react-router-dom";
 import LoginPage from "./pages/login.tsx";
 import SignUpPage from "./pages/signup.tsx";
+import SenhaPage from "./pages/senha.tsx";
+import CriarPage from "./pages/criar.tsx";
 import ArtistasPage from "./pages/artists.tsx";
 import ObrasPage from "./pages/obras.tsx";
 import SobrePage from "./pages/sobre.tsx";
@@ -22,7 +24,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route element={<App />} path="/a" />
             <Route element={<LandingPage />} path="/" />
             <Route element={<LoginPage />} path="/login" />
-            <Route element={<SignUpPage />} path="/cadastro" />
+            <Route element={<SignUpPage />} path="/signup" />
+            <Route element={<SenhaPage />} path="/senha" />
+            <Route element={<CriarPage />} path="/criar" />
             <Route element={<ArtistasPage />} path="/artist" />
             <Route element={<ObrasPage />} path="/obras" />
             <Route element={<SobrePage />} path="/sobre" />

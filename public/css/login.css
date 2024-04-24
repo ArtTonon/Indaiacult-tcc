@@ -26,6 +26,7 @@ a:hover {
 
 span {
   color: #e3d985;
+  margin-top: 10px;
 }
 
 p {
@@ -95,12 +96,12 @@ h6 span{
 .form-group{ 
   position: relative;
   display: block;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .form-style {
   padding: 13px 20px;
-  padding-left: 55px;
+  padding-left: 90px;
   height: 48px;
   width: 100%;
   font-weight: 500;
@@ -116,6 +117,7 @@ h6 span{
   transition: all 200ms linear;
   box-shadow: 0 4px 8px 0 #3e8989;
 }
+
 .form-style:focus,
 .form-style:active {
   border: none;
@@ -178,13 +180,10 @@ h6 span{
   border: 0.0133rem solid #3e8989;
  }
 
-.circles {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  overflow: hidden;
+ .circles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 li {

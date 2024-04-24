@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: transparent; /* Remover o background branco */
+}
+
+.login-container {
+    width: 450px;
+    background-color: #102542;
+    padding: 30px;
+    border: 1px solid #f87060;
+    border-radius: 5px;
+    margin: 50px auto;
+    box-shadow: 0px 0px 20px #f87060;
+    text-align: center;
+    padding-block: 40px;
+    position: relative; /* Adicionar posição relativa */
+    z-index: 1; /* Garantir que o container de login fique na frente */
+}
+
+.login-container h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 50px;
+    color: #e3d985;
+}
+
+.login-container p {
+    margin-bottom: 20px;
+    opacity: 60%;
+    font-size: 20px;
+    color: #e3d985;
+}
+
+.login-container form {
+    margin-bottom: 10px;
+}
+
+.login-container a {
+    color: #f87060;
+}
+
+.login-container a:hover {
+    color: #3e8989;
+}
+
+.login-container input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #0e2039;
+    border-radius: 3px;
+    box-sizing: border-box;
+    opacity: 60%;
+    font-size: 15px;
+    background-color: #b3a394;
+}
+
+.login-container button[type="submit"] {
+    width: 100%;
+    padding: 17px;
+    background-color: #f87060;
+    color: #e3d985;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.login-container button[type="submit"]:hover {
+    background-color: #d65c4f;
+}
+
+.login-container a[name="linkar"] {
+    color: #e3d985;
+}
+
+.login-container a[name="signup"] {
+    color: #e3d985;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.login-container img[alt="ou"] {
+    width: 430px;
+    height: 17px;
+}
+
+.login-container img[alt="cadeado"] {
+    width: 150px;
+    height: 150px;
+}
+
+.form-group{ 
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Garantir que o iframe fique atrás do container de login */
+}
+
+
+/*
+
+#102542
+#f87060
+#b3a394
+#e3d985
+#3e8989
+
+*/
