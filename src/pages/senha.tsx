@@ -56,7 +56,7 @@ const Senha: React.FC = () => {
           Enviar link para login</button>
       </form>
       <img src="./ou-dark.png" alt="ou" />
-      <a className="link" href="./signup.tsx">
+      <a className="link" href="./signup">
         crie uma nova conta
       </a>
     </div>

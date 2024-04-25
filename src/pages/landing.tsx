@@ -5,6 +5,7 @@ import { FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
 const LandingPage = () => {
   const { darkMode } = useTheme();
   return (
+    <body className="dark:bg-darkblue">
     <div>
       <div className="flex flex-col justify-center md:flex-row items-center">
         <div className="flex flex-col w-full gap-8 md:w-1/2 md:gap-14">
@@ -53,6 +54,7 @@ const LandingPage = () => {
         />
       </div>
     </div>
+    </body>
   );
 };
 

@@ -35,6 +35,7 @@ const SignUp: React.FC = () => {
 
   return (
     <>
+    <body className="dark:bg-darkblue">
   <link
     rel="stylesheet"
     href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
@@ -44,24 +45,36 @@ const SignUp: React.FC = () => {
     href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
   />
   <link rel="stylesheet" href="../../public/css/login.css" />
-  <div>
-    <ul className="circles">
-      <li/><li/><li/><li/><li/><li/>
-      <li/><li/><li/><li/><li/><li/>
-      <li/><li/><li/><li/></ul>
-  </div>
+  <div className="circles">
+      <ul>
+        <li className="dark:bg-lightblue"/>
+        <li className="dark:bg-lightblue"/>
+        <li className="dark:bg-lightblue"/>
+        <li className="dark:bg-lightblue"/>
+        <li className="dark:bg-lightblue"/>
+        <li className="dark:bg-lightblue"/>
+        <li className="dark:bg-lightblue"/>
+        <li className="dark:bg-lightblue"/>
+        <li className="dark:bg-lightblue"/>
+        <li className="dark:bg-lightblue"/>
+        <li className="dark:bg-lightblue"/>
+        <li className="dark:bg-lightblue"/>
+        <li className="dark:bg-lightblue"/>
+        <li className="dark:bg-lightblue"/>
+      </ul>
+    </div>
   <div className="section">
     <div className="container">
       <div className="row full-height justify-content-center">
           <div className="section pb-5 pt-5 pt-sm-2 text-center">
             <h6 className="mb-0 pb-3">
             <a href="./login">
-              <span>-&gt; Logar</span></a>
-              <span>Inscrever &lt;-</span>
+              <span className="dark:text-yellow">-&gt; Logar</span></a>
+              <span className="dark:text-yellow">Inscrever &lt;-</span>
             </h6>
-            <div className="card-3d-wrap mx-auto">
+            <div className="card-3d-wrap mx-auto dark:text-yellow">
               <div className="card-3d-wrapper">
-                <div className="card-signup">
+                <div className="card-signup dark:bg-darkblue">
                   <div className="center-wrap">
                     <div className="section text-center">
                     <form className="flex flex-col items-center justify-center w-full">
@@ -73,7 +86,7 @@ const SignUp: React.FC = () => {
                       <div className="form-group">
                         <input
                           type="text"
-                          className="form-style"
+                          className="form-style dark:bg-darkblue"
                           placeholder="Nome Completo"
                           value={name}
                           onChange={(e) => setName(e.target.value)}
@@ -83,7 +96,7 @@ const SignUp: React.FC = () => {
                       <div className="form-group mt-2">
                         <input
                           type="tel"
-                          className="form-style"
+                          className="form-style dark:bg-darkblue"
                           placeholder="Telefone"
                           value={telephone}
                           onChange={(e) => setTelephone(e.target.value)}
@@ -93,7 +106,7 @@ const SignUp: React.FC = () => {
                       <div className="form-group mt-2">
                         <input
                           type="email"
-                          className="form-style"
+                          className="form-style dark:bg-darkblue"
                           placeholder="Email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
@@ -103,7 +116,7 @@ const SignUp: React.FC = () => {
                       <div className="form-group mt-2">
                         <input
                           type="password"
-                          className="form-style"
+                          className="form-style dark:bg-darkblue"
                           placeholder="Senha"
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
@@ -112,14 +125,15 @@ const SignUp: React.FC = () => {
                       </div> <br />
                       <button
                         onClick={handleSignUp}
-                        className="bg-lightblue w-72 py-3 hover:bg-darkblue text-white rounded-md"
+                        className="bg-main dark:bg-lightblue w-72 py-3 hover:bg-beje text-white rounded-md"
                         >
                           Criar conta
                       </button>
-                      <p className="mb-0 mt-2 text-center">
+                      <p className="mb-0 mt-2 text-center dark:text-yellow">
                         <a
                           href="./artistas/artista.html"
-                          className="link"
+                          className="dark:text-yellow  dark:hover:text-lightblue"
+                          type="link"
                         >
                           Você é artista? Clique aqui
                         </a>
@@ -134,6 +148,7 @@ const SignUp: React.FC = () => {
         </div>
       </div>
     </div>
+  </body>
 </>
   );
 };

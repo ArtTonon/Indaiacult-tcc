@@ -15,6 +15,8 @@ export default {
         lightblue: "#3E8989",
         darkblue: "#102542",
         diffBlack: "##80808080",
+        beje: "#b3a394",
+        yellow: "#e3d985"
       },
     },
   },

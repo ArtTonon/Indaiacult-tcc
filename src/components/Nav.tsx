@@ -16,7 +16,7 @@ const Nav = () => {
   return (
     <>
       <nav className="flex w-1/3 justify-end">
-        <div className="hidden w-full justify-between items-center md:flex">
+        <div className="hidden w-full justify-between items-center md:flex dark:br-darkblue">
           <NavLinks closeMenu={closeMenu} />
         </div>
         <div className="md:hidden">

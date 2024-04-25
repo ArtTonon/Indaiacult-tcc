@@ -3,12 +3,12 @@ body{
 	font-family: 'Poppins', sans-serif;
 	font-weight: 300;
 	line-height: 1.7;
-	color:#e3d985;
-	background-color:#102542; 
+	color:#f87060;
+	background-color:#ffff; 
   margin: 0;
 }
 a {
-  color: #e3d985;
+  color: #f87060;
   font-size: 16px;
 }
 a:hover {
@@ -17,15 +17,15 @@ a:hover {
 }
 
 .link {
-  color:#e3d985;
-}
-
-.link:hover {
   color:#f87060;
 }
 
+.link:hover {
+  color:#3e8989;
+}
+
 span {
-  color: #e3d985;
+  color: #f87060;
   margin-top: 10px;
 }
 
@@ -64,7 +64,7 @@ h6 span{
   transform-style: preserve-3d;
   perspective: 800px;
   margin-top: 60px;
-  border: 1px solid #3e8989;
+  border: 1px solid #b3a394;
 }
 .card-3d-wrapper {
   width: 100%;
@@ -77,11 +77,13 @@ h6 span{
 .card-login, .card-signup {
   width: 100%;
   height: 100%;
-  background-color: #102542;
-  box-shadow: 0px 0px 20px #3e8989;
+  background-color: #ffff;
+  box-shadow: 0px 0px 20px #b3a394;
   position: absolute;
   border-radius: 6px;
-  -webkit-transform-style: preserve-3d;
+}
+.dark .card-login, .dark .card-signup {
+  box-shadow: 0px 0px 20px #3e8989; 
 }
 .center-wrap{
   position: absolute;
@@ -111,19 +113,27 @@ h6 span{
   letter-spacing: 0.5px;
   outline: none;
   color:#b3a394;
-  background-color:#102542;
+  background-color:#ffff;
   border: none;
-  -webkit-transition: all 200ms linear;
-  transition: all 200ms linear;
-  box-shadow: 0 4px 8px 0 #3e8989;
+  box-shadow: 0 4px 8px 0 #b3a394;
+}
+
+.dark .form-style {
+  color: #3e8989;
+  box-shadow: 0px 0px 20px #3e8989; 
 }
 
 .form-style:focus,
 .form-style:active {
   border: none;
   outline: none;
-  box-shadow: 0 4px 8px 0 #3e8989;
+  box-shadow: 0 4px 8px 0 #b3a394;
 }
+.dark .form-style:focus,
+.form-style:active {
+  box-shadow: 0 4px 8px 0 #3e8989; 
+}
+
 .input-icon {
   position: absolute;
   top: 0;
@@ -149,13 +159,13 @@ h6 span{
   display: -ms-inline-flexbox;
   display: inline-flex;
   align-items: center;
-  background-color: #ffeba7;
-  color:#3e8989;
+  background-color: #f87060;
+  color:#b3a394;
 }
 .btn:hover{  
-  background-color:#3e8989;
-  color: #ffeba7;
-  box-shadow: 0 8px 24px 0 #3e8989;
+  background-color:#b3a394;
+  color: #f87060;
+  box-shadow: 0 8px 24px 0 #b3a394;
 }
 
 .social {
@@ -173,12 +183,16 @@ h6 span{
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
-  box-shadow: 2px 2px 2px #3e8989;
+  box-shadow: 2px 2px 2px #b3a394;
   margin: 0 0.5rem;
   font-size: 1.3rem;
   padding: 1.3rem;
-  border: 0.0133rem solid #3e8989;
+  border: 0.0133rem solid #b3a394;
  }
+ .dark .social-container {
+  box-shadow: 0px 0px 20px #3e8989; 
+  border: 0.0133rem solid #3e8989;
+}
 
  .circles {
   display: flex;
@@ -189,7 +203,7 @@ h6 span{
 li {
   position: absolute;
   display: block;
-  background: #3e8989;
+  background: #b3a394;
   width: 20px;
   height: 20px;
   list-style: none;
