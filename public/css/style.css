@@ -2,36 +2,44 @@ body {
     font-family: Arial, sans-serif;
     display: grid;
     place-items: center;
-    height: 100vh;
     background-color: transparent; /* Remover o background branco */
+    height: 100vh; /* Definindo a altura do corpo como 100% da altura da tela */
+    overflow: hidden; /* Ocultando a barra de rolagem */
 }
 
 .login-container {
-    width: 450px;
-    background-color: #102542;
+    width: 400px;
+    height: 540px;
+    background-color: #ffff;
     padding: 30px;
-    border: 1px solid #f87060;
+    border: 1px solid #102542;
     border-radius: 5px;
     margin: 50px auto;
-    box-shadow: 0px 0px 20px #f87060;
+    margin-bottom: 200px;
+    box-shadow: 0px 0px 20px #102542;
     text-align: center;
-    padding-block: 40px;
+    padding-block: 20px;
     position: relative; /* Adicionar posição relativa */
     z-index: 1; /* Garantir que o container de login fique na frente */
 }
 
+.dark .login-container{
+    border: 1px solid #f87060;
+    box-shadow: 0px 0px 30px #f87060; 
+}
+
 .login-container h2 {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 50px;
-    color: #e3d985;
+    margin-top: 5px;
+    font-size: 30px;
+    color: #102542;
 }
 
 .login-container p {
-    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     opacity: 60%;
-    font-size: 20px;
-    color: #e3d985;
+    font-size: 15px;
+    color: #102542;
 }
 
 .login-container form {
@@ -39,7 +47,8 @@ body {
 }
 
 .login-container a {
-    color: #f87060;
+    color: #102542;
+    font-size: 18px;
 }
 
 .login-container a:hover {
@@ -49,7 +58,7 @@ body {
 .login-container input[type="text"] {
     width: 100%;
     padding: 8px;
-    border: 1px solid #0e2039;
+    border: 1px solid #ffff;
     border-radius: 3px;
     box-sizing: border-box;
     opacity: 60%;
@@ -60,8 +69,8 @@ body {
 .login-container button[type="submit"] {
     width: 100%;
     padding: 17px;
-    background-color: #f87060;
-    color: #e3d985;
+    background-color: #102542;
+    color: #b3a394;
     border: none;
     border-radius: 9px;
     cursor: pointer;
@@ -69,36 +78,71 @@ body {
 }
 
 .login-container button[type="submit"]:hover {
-    background-color: #d65c4f;
+    background-color: #1a3a68;
+}
+
+.dark .login-container button[type="submit"] {
+    color: #e3d985;
+    background-color: #f87060;
+}
+
+.dark .login-container button[type="submit"]:hover {
+    background-color: #d86053;
 }
 
 .login-container a[name="linkar"] {
-    color: #e3d985;
+    color: #102542;
 }
 
 .login-container a[name="signup"] {
-    color: #e3d985;
+    color: #102542;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .login-container img[alt="ou"] {
+    margin-top: 30px;
+    margin-bottom: 20px;
     width: 430px;
-    height: 17px;
+    height: 18px;
 }
 
 .login-container img[alt="cadeado"] {
     width: 150px;
     height: 150px;
+    margin-left: 100px;
 }
 
-.form-group{ 
-    position: relative;
-    display: block;
-    margin: 0;
-    padding: 0;
+.form-style {
+    padding: 13px 20px;
+    height: 40px;
+    width: 100%;
+    font-weight: 500;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    color:#102542;
+    background-color:#ffff;
+    border: none;
+    box-shadow: 0 4px 8px 0 #102542;
+  }
+  
+  .dark .form-style {
+    color: #f87060;
+    box-shadow: 0px 0px 20px #f87060; 
+  }
+  
+  .form-style:focus,
+  .form-style:active {
+    border: none;
+    outline: none;
+    box-shadow: 0 4px 8px 0 #102542;
   }
 
+  .dark .form-style:focus,
+.form-style:active {
+  box-shadow: 0 4px 8px 0 #f87060; 
+}
 iframe {
     position: absolute;
     top: 0;

@@ -5,6 +5,7 @@ import { artists } from "../mock";
 
 const ArtistsPage = () => {
   return (
+    <body className="dark:bg-darkblue">
     <div className="flex justify-center items-center">
       <div className="flex flex-col">
         <div className="flex flex-col items-center gap-5 justify-center text-2xl font-semibold font-montserrat dark:text-white">
@@ -21,6 +22,7 @@ const ArtistsPage = () => {
         </div>
       </div>
     </div>
+    </body>
   );
 };
 

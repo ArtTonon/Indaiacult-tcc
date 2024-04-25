@@ -8,7 +8,7 @@ const ArtistCard: React.FC<{
   artista: Artist;
 }> = ({ artista }) => {
   return (
-    <div className="flex flex-col w-full rounded-lg mx-auto gap-2 shadow-darkblue dark:shadow-lightblue bg-white dark:bg-diffBlack shadow-md">
+    <div className="flex flex-col w-full rounded-lg mx-auto gap-2 shadow-darkblue dark:shadow-lightblue bg-white dark:bg-darkblue shadow-md">
       <div className="-space-y-12">
         <img
           className="w-full h-32 object-cover rounded-tl-xl rounded-tr-xl"

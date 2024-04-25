@@ -1,7 +1,11 @@
 import React from "react";
 
 const SobrePage = () => {
-  return <div>SobrePage</div>;
+  return (
+    <body className="dark:bg-darkblue">
+    <div>SobrePage</div>
+  </body>
+  );
 };
 
 export default SobrePage;

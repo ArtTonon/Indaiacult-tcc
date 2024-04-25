@@ -6,6 +6,8 @@ body{
 	color:#f87060;
 	background-color:#ffff; 
   margin: 0;
+  height: 100vh; /* Definindo a altura do corpo como 100% da altura da tela */
+  overflow: hidden; /* Ocultando a barra de rolagem */
 }
 a {
   color: #f87060;
