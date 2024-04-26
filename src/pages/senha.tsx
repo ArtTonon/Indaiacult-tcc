@@ -47,14 +47,13 @@ const Senha: React.FC = () => {
   return (
     <>
     <body className="dark:bg-darkblue">
-  <link rel="stylesheet" type="text/css" href="../../public/css/style.css" />
-  
-  <div className="login-container dark:bg-darkblue">
-    <div>
-      <img id="cadeado-img"
+      <link rel="stylesheet" type="text/css" href="../../public/css/style.css" />
+        <div className="login-container dark:bg-darkblue">
+          <div>
+            <img id="cadeado-img"
             src="./cadeado-light.png" 
             alt="cadeado"
-            className="justify-content-center mb-2"/>
+            className="justify-content-center mb-2"/> 
       <h2 className="dark:text-yellow">Problemas para entrar?</h2>
       <p className="dark:text-yellow">
         Insira o seu nome de usuário ou email e enviaremos um link para você
@@ -86,7 +85,7 @@ const Senha: React.FC = () => {
     </div>
   </div>
   </body>
-</>
+  </>
   );
 };
 

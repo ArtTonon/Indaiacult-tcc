@@ -143,6 +143,10 @@ body {
 .form-style:active {
   box-shadow: 0 4px 8px 0 #f87060; 
 }
+
+.MeetingPoint {
+    margin-top: 20px; /* Adiciona uma margem superior para separar o MeetingPoint do login-container */
+  }
 iframe {
     position: absolute;
     top: 0;
