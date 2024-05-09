@@ -5,7 +5,7 @@ import { FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
 const LandingPage = () => {
   const { darkMode } = useTheme();
   return (
-    <body className="dark:bg-darkblue">
+    <body>
     <div>
       <div className="flex flex-col justify-center md:flex-row items-center">
         <div className="flex flex-col w-full gap-8 md:w-1/2 md:gap-14">
@@ -17,21 +17,21 @@ const LandingPage = () => {
             <br /> e toda arte indaiatubana.
           </p>
           <div className="flex flex-row items-center gap-8 md:gap-16">
-            <a href="">
+            <a href="https://www.facebook.com">
               <FaFacebook
                 size={54}
                 className="text-darkblue dark:text-lightblue hover:scale-110"
                 aria-label="Ícone do Facebook, que irá te redirecionar à página oficial do indaiacult no Facebook"
               />
             </a>
-            <a href="">
+            <a href="https://www.instagram.com/indaia_cult">
               <FaInstagram
                 size={54}
                 className="text-darkblue dark:text-lightblue hover:scale-110"
                 aria-label="Ícone do Instagram, que irá te redirecionar à página oficial do indaiacult no Instagram"
               />
             </a>
-            <a href="">
+            <a href="https://www.tiktok.com">
               <FaTiktok
                 size={44}
                 className="text-darkblue dark:text-lightblue hover:scale-110"

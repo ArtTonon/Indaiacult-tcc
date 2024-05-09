@@ -33,7 +33,7 @@ const NavLinks = ({ closeMenu }: { closeMenu: () => void }) => {
       >
         Sobre
       </a>
-      <LoginButton closeMenu={closeMenu} />
+      <LoginButton />
       <ToggleThemeButton/>
     </>
   );

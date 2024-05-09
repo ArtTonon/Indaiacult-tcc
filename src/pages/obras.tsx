@@ -1,13 +1,7 @@
 import React from "react";
 
 const ObrasPage = () => {
-  return (
-    <>
-    <body className="dark:bg-darkblue">
-    <div>ObrasPage</div>
-  </body>
-  </>
-  );
+  return <div>ObrasPage</div>;
 };
 
 export default ObrasPage;

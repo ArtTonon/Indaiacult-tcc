@@ -14,6 +14,7 @@ import SobrePage from "./pages/sobre.tsx";
 import LandingPage from "./pages/landing.tsx";
 import { ThemeProvider } from "./context.tsx";
 import ArtistDetailstPage from "./pages/atistsdetail.jsx";
+import Artista from "./pages/artistas.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -31,6 +32,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route element={<ObrasPage />} path="/obras" />
             <Route element={<SobrePage />} path="/sobre" />
             <Route element={<ArtistDetailstPage />} path="/artist:id" />
+            <Route element={<Artista />} path="/artista" />
           </Routes>
         </BrowserRouter>
       </Layout>

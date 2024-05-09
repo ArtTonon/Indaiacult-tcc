@@ -52,6 +52,10 @@ body {
 }
 
 .login-container a:hover {
+    color: #b3a394;
+}
+
+.dark .login-container a:hover {
     color: #3e8989;
 }
 
@@ -82,7 +86,7 @@ body {
 }
 
 .dark .login-container button[type="submit"] {
-    color: #e3d985;
+    color: #102542;
     background-color: #f87060;
 }
 
@@ -90,27 +94,13 @@ body {
     background-color: #d86053;
 }
 
-.login-container a[name="linkar"] {
-    color: #102542;
-}
-
-.login-container a[name="signup"] {
-    color: #102542;
-    text-decoration: none;
-    font-size: 15px;
-}
-
 .login-container img[alt="ou"] {
     margin-top: 30px;
     margin-bottom: 20px;
-    width: 430px;
-    height: 18px;
 }
 
 .login-container img[alt="cadeado"] {
-    width: 150px;
-    height: 150px;
-    margin-left: 100px;
+    margin-left: 90px;
 }
 
 .form-style {

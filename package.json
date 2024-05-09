@@ -10,15 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.5.2",
-    "@iconify/icons-emojione": "^1.2.6",
-    "@iconify/react": "^4.1.1",
-    "@types/gsap": "^3.0.0",
+    "@types/node": "^20.12.7",
     "@types/react-router-dom": "^5.3.3",
     "antd": "^5.14.1",
     "autoprefixer": "^10.4.17",
     "axios": "^1.6.8",
-    "gsap": "^3.12.5",
+    "iconify": "^1.4.0",
     "lucide-react": "^0.336.0",
     "postcss": "^8.4.35",
     "react": "^18.2.0",
@@ -30,8 +27,8 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@types/babel__core": "^7.20.5",
-    "@types/react": "^18.2.79",
+    "@iconify/react": "^4.1.1",
+    "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
     "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^7.0.2",

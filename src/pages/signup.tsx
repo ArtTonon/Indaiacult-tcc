@@ -35,7 +35,7 @@ const SignUp: React.FC = () => {
 
   return (
     <>
-    <body className="dark:bg-darkblue">
+    <body>
   <link
     rel="stylesheet"
     href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
@@ -131,8 +131,8 @@ const SignUp: React.FC = () => {
                       </button>
                       <p className="mb-0 mt-2 text-center dark:text-yellow">
                         <a
-                          href="./artistas/artista.html"
-                          className="dark:text-yellow  dark:hover:text-lightblue"
+                          href="./artista"
+                          className="dark:text-yellow  dark:hover:text-main"
                           type="link"
                         >
                           Você é artista? Clique aqui

@@ -21,7 +21,7 @@ const Login: React.FC = () => {
 
   return (
     <>
-    <body className="dark:bg-darkblue">
+    <body>
       <link
         rel="stylesheet"
         href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
@@ -121,7 +121,7 @@ const Login: React.FC = () => {
                            Entrar
                           </button>
                           <p className="mb-0 mt-4 text-center dark:text-yellow">
-                        <a className="dark:text-yellow  dark:hover:text-lightblue" href="./senha" type="link">
+                        <a className="dark:text-yellow  dark:hover:text-main" href="./senha" type="link">
                           Esqueceu a senha?
                         </a>
                           </p>
