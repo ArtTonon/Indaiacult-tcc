@@ -31,6 +31,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                 <Layout>
                   <PrivateRoute element={<ArtistasPage />} path="/artists" />
                   <PrivateRoute element={<ObrasPage />} path="/obras" />
+                  <Route element={<ProfilePage />} path="/perfil" />
                   <PrivateRoute
                     element={<ArtistDetailstPage />}
                     path="/artist/:id"
@@ -45,7 +46,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route element={<SenhaPage />} path="/senha" />
             <Route element={<CriarPage />} path="/criar" />
             <Route element={<ArtistaPage />} path="/artistas" />
-            <Route element={<ProfilePage />} path="/profile" />
+            <Route element={<ProfilePage />} path="/perfil" />
           </Routes>
         </ThemeProvider>
       </UserProvider>
