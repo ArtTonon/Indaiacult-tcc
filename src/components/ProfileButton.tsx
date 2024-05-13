@@ -1,5 +1,6 @@
-
 import React, { useState } from "react";
+import { FaCog, FaUserPlus } from "react-icons/fa";
+import { FaArrowRightArrowLeft, FaArrowRightToBracket, FaAsterisk, FaBookmark, FaComments, FaPenFancy, FaPlus, FaQuestion } from "react-icons/fa6";
 
 const ProfileButton = () => {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -30,27 +31,30 @@ const ProfileButton = () => {
   };
 
   return (
-    <>
-      <link rel="stylesheet" href="../../public/css/menu.css"></link>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></link>
-
+    <section>
+      
       <div className="relative"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}>
         <a href="/login">
           <button
-            className="bg-darkblue hover:bg-lightblue dark:bg-lightblue dark:hover:bg-darkblue text-white font-bold py-2 px-8 rounded-full"
             onClick={() => {
               toggleMenu();
               setOpenedByClick(true);
             }}
           >
-            Login
+            <img
+              className="md:block hidden"
+              width={50}
+              height={50}
+              src={ "/assets/profile-dark.svg" }
+              alt="img"
+            />
           </button>
         </a>
 
         {menuVisible && (
-          <div className="absolute top-10 right-0 bg-white border border-gray-200 p-2 rounded shadow"
+          <div className="absolute right-0 bg-white border border-gray-200 p-6 rounded shadow"
             onMouseEnter={handleMenuMouseEnter}
             onMouseLeave={handleMenuMouseLeave}>
             <div className="menu-nav">
@@ -59,25 +63,23 @@ const ProfileButton = () => {
                 <a href=""><h3 className="name">Hugo Fonseca</h3></a> <br />
               </div>
               <ul>
-                <li><a href=""><span className="fas fa-repeat"></span>Trocar</a></li>
-                <li><a href="./login"><span className="fas fa-user-plus"></span>Adicionar Conta</a></li>
-                <li><a href="./artists"><span className="fas fa-pen-nib"></span>Artista</a></li>
-                <li><a href=""><span className="fas fa-plus"></span>Novo Post</a></li>
-                <li><a href=""><span className="fas fa-bookmark"></span>Salvos</a></li>
-                <li><a href=""><span className="fas fa-comments"></span>Comunidade</a></li>
-                <li><a href=""><span className="fas fa-cogs"></span>Configurações</a></li>
-                <li><a href=""><span className="fas fa-asterisk"></span>Termos de Serviço</a></li>
-                <li><a href=""><span className="fas fa-question"></span>Duvidas</a></li>
-                <li><a href=""><span className="fas fa-arrow-right"></span>Sair</a></li>
+                <li><a href=""><span style={{ display: 'flex' }}><FaArrowRightArrowLeft /> Trocar</span></a></li>
+                <li><a href=""><span style={{ display: 'flex' }}><FaUserPlus />Adicionar Conta</span></a></li>
+                <li><a href=""><span style={{ display: 'flex' }}><FaPenFancy />Artista</span></a></li>
+                <li><a href=""><span style={{ display: 'flex' }}><FaPlus />Novo Post</span></a></li>
+                <li><a href=""><span style={{ display: 'flex' }}><FaBookmark />Salvos</span></a></li>
+                <li><a href=""><span style={{ display: 'flex' }}><FaComments />Comunidade</span></a></li>
+                <li><a href=""><span style={{ display: 'flex' }}><FaCog />Configurações</span></a></li>
+                <li><a href=""><span style={{ display: 'flex' }}><FaAsterisk />Termos de Serviço</span></a></li>
+                <li><a href=""><span style={{ display: 'flex' }}><FaQuestion />Duvidas</span></a></li>
+                <li><a href=""><span style={{ display: 'flex' }}><FaArrowRightToBracket />Sair</span></a></li>
               </ul>
             </div>
           </div>
         )}
 
       </div>
-      <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-      <script src='https://raw.githubusercontent.com/julianshapiro/velocity/master/velocity.min.js'></script>
-    </>
+    </section>
   );
 };
 

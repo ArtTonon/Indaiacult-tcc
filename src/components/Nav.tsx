@@ -1,40 +1,40 @@
-import { useState, useEffect } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import LoginButton from "./LoginButton";
 import ToggleThemeButton from "./ToggleThemeButton";
-import { useTheme } from "../context";
+import { LuPalette } from "react-icons/lu";
+import { Link, useLocation } from "react-router-dom";
+import { PiFrameCorners } from "react-icons/pi";
+
+const NavLink = ({
+  icon,
+  path,
+  name,
+}: {
+  icon: ReactElement;
+  path: string;
+  name: string;
+}) => {
+  const { pathname } = useLocation();
+  const isActive = pathname === `/${path}`;
+  return (
+    <Link
+      to={`/${path}`}
+      className={`flex items-center gap-2 text-xl w-44 text-darkblue dark:text-lightblue font-medium p-2 rounded-md ${
+        isActive && "bg-highlight dark:bg-highlightDark dark:text-main "
+      }`}
+    >
+      {icon}
+      {name}
+    </Link>
+  );
+};
 
 const NavLinks = () => {
-  const isActive = (path: string) => {
-    return window.location.pathname === path;
-  };
-
   return (
     <>
-      <a
-        href="/artist"
-        className={`text-lg text-darkblue dark:text-lightblue font-medium relative after:bg-main after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer ${
-          isActive("/artists") ? "font-extrabold" : ""
-        }`}
-      >
-        Artistas
-      </a>
-      <a
-        href="/obras"
-        className={`text-lg text-darkblue dark:text-lightblue font-medium relative after:bg-main after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer ${
-          isActive("/obras") ? "font-extrabold" : ""
-        }`}
-      >
-        Obras
-      </a>
-      <a
-        href="/sobre"
-        className={`text-lg text-darkblue dark:text-lightblue font-medium relative after:bg-main after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer ${
-          isActive("/sobre") ? "font-extrabold" : ""
-        }`}
-      >
-        Sobre
-      </a>
+      <NavLink path="artists" name="Artistas" icon={<LuPalette />} />
+      <NavLink path="obras" name="Obras" icon={<PiFrameCorners />} />
 
       <LoginButton></LoginButton>
       <ToggleThemeButton></ToggleThemeButton>
@@ -44,15 +44,14 @@ const NavLinks = () => {
 
 const Nav = () => {
   const [isOpen, SetIsOpen] = useState(false);
-  const { darkMode } = useTheme();
 
   const toggleNavBar = () => {
     SetIsOpen(!isOpen);
   };
   return (
     <>
-      <nav className="flex  w-full justify-end">
-        <div className="hidden gap-4 items-center md:flex">
+      <nav className="flex flex-col">
+        <div className="hidden gap-4 md:flex flex-col">
           <NavLinks />
         </div>
         <div className="md:hidden">

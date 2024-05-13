@@ -1,4 +1,3 @@
-import React from "react";
 import { Sun, Moon } from "lucide-react";
 import { useTheme } from "../context";
 
@@ -7,7 +6,7 @@ const ToggleThemeButton = () => {
 
   return (
     <div>
-      <button onClick={toggleDarkMode}>
+      <button aria-label="botão para mudar de tema" onClick={toggleDarkMode}>
         {darkMode ? (
           <Sun
             color=" #fff"

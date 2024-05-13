@@ -2,6 +2,9 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { MdOutlineLock } from "react-icons/md";
+import LandingNav from "../components/LandingNav";
+import "../../public/css/animation.css";
 
 const Senha: React.FC = () => {
   const [password, setPassword] = useState("");
@@ -10,11 +13,12 @@ const Senha: React.FC = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const navigate = useNavigate();
 
+
   const handleSenha = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (password !== confirmPassword) {
-      setError("The new password and confirm password do not match.");
+      setError("A duas senhas não se coincidem.");
       return;
     }
 
@@ -25,51 +29,76 @@ const Senha: React.FC = () => {
       console.log(response.data);
       setPassword("");
       setConfirmPassword("");
-      setSuccessMessage("The new password has been saved successfully.");
+      setSuccessMessage("A nova senha foi salva com sucesso.");
       navigate("/login");
     } catch (error) {
-      setError("Error while creating user");
+      setError("Erro ao criar usuário");
       console.error(error);
     }
   };
 
   return (
-    <>
-    <body>
-  <link rel="stylesheet" type="text/css" href="../../public/css/criar.css" />
-  <title>Criar Nova Senha</title>
-  {error && <div className="text-red-500 mb-4">{error}</div>}
-      {successMessage && (
-       <div className="text-geen-500 mb-4">{successMessage}</div>
-   )}
-  <div className="container dark:bg-darkblue">
-    <h1 className="dark:text-yellow">Criar Nova Senha</h1>
-    <form id="password-form" onSubmit={handleSenha}>
-      <label htmlFor="password" className="dark:text-yellow">Nova Senha:</label>
-      <input
-         type="password"
-         className="password"
-         placeholder="Password"
-         value={password}
-         onChange={(e) => setPassword(e.target.value)}
-      />
-      <label htmlFor="confirm-password" className="dark:text-yellow">Confirmar Senha:</label>
-      <input
-         type="password"
-         className="confirm-password"
-         placeholder="Confirm Password"
-         value={confirmPassword}
-         onChange={(e) => setConfirmPassword(e.target.value)}
-      />
+<>
+<LandingNav />
+<div className="circles">
+  <ul>
+    <li className="dark:bg-main" />
+    <li className="dark:bg-main" />
+    <li className="dark:bg-main" />
+    <li className="dark:bg-main" />
+    <li className="dark:bg-main" />
+    <li className="dark:bg-main" />
+    <li className="dark:bg-main" />
+    <li className="dark:bg-main" />
+    <li className="dark:bg-main" />
+    <li className="dark:bg-main" />
+    <li className="dark:bg-main" />
+    <li className="dark:bg-main" />
+    <li className="dark:bg-main" />
+    <li className="dark:bg-main" />
+  </ul>
+</div>
+<section className="mt-40 flex flex-col items-center justify-center">
+  <div className="rounded-xl z-10 relative bg-white dark:bg-diffBlack dark:text-white border-highlight dark:border-highlightDark border-4 px-16 py-14 flex flex-col items-center gap-8">
+    <h1 className="font-semibold font-montserrat text-xl lg:text-4xl">
+    Criar uma nova <span className="text-main dark:text-lightblue font-bold">senha</span>
+    </h1>
+    <form
+      onSubmit={handleSenha}
+      className="flex flex-col gap-6 text-xl w-full"
+    >
+      <label htmlFor="">
+              <span className="font-montserrat">Senha</span>
+              <div className="flex items-center gap-4 border-4 border-highlight dark:border-highlightDark  p-3 rounded-lg">
+                <MdOutlineLock className="text-darkblue dark:text-main text-2xl" />
+                <input
+                  type="text"
+                  placeholder="Crie sua senha"
+                  className="font-montserrat bg-transparent "
+                />
+              </div>
+            </label>
+
+            <label htmlFor="">
+              <div className="flex items-center gap-4 border-4 border-highlight dark:border-highlightDark  p-3 rounded-lg">
+                <MdOutlineLock className="text-darkblue dark:text-main text-2xl" />
+                <input
+                  type="text"
+                  placeholder="Confirme sua senha"
+                  className="font-montserrat bg-transparent "
+                />
+              </div>
+            </label>
+
       <button
         type="submit"
-        className="bg-lightblue w-72 py-3 rounded-md"
+        className="py-2 font-bold rounded-lg bg-darkblue dark:bg-main text-white hover:bg-main dark:hover:bg-lightblue"
       >
-        Salvar Nova Senha
+        Salvar nova senha
       </button>
     </form>
   </div>
-  </body>
+</section>
 </>
   );
 };

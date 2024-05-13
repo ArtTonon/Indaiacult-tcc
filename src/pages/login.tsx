@@ -2,10 +2,14 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { FaInstagram, FaFacebook, FaGoogle } from "react-icons/fa";
+import "../../public/css/animation.css";
+import { MdOutlineAlternateEmail, MdOutlineLock } from "react-icons/md";
+import { Link } from "react-router-dom";
+import LandingNav from "../components/LandingNav";
 
 const Login: React.FC = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email] = useState("");
+  const [password] = useState("");
   const [error, setError] = useState("");
 
   const handleLogin = async () => {
@@ -15,171 +19,95 @@ const Login: React.FC = () => {
         password,
       });
     } catch (error) {
-      setError("Credenciais inválidas");
+      setError("Dados incorretos");
     }
   };
 
   return (
     <>
-    <body>
-      <link
-        rel="stylesheet"
-        href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
-      />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
-      />
-      <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
-      <link rel="stylesheet" href="../../public/css/login.css" />
+      <LandingNav />
       <div className="circles">
-      <ul>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-      </ul>
-    </div>
-      <div className="section">
-        <div className="container">
-          <div className="row full-height justify-content-center">
-              <div className="section pb-5 pt-5 pt-sm-2 text-center">
-                <h6 className="mb-0 pb-3">
-                  <span className="dark:text-yellow">-&gt; Logar </span>
-                  <a href="./signup">
-                  <span className="dark:text-yellow">Inscrever &lt;-</span></a>
-                </h6>
-                <div className="card-3d-wrap mx-auto dark:text-yellow">
-                <div className="card-3d-wrapper ">
-                    <div className="card-login dark:bg-darkblue">
-                      <div className="center-wrap">
-                        <div className="section text-center">
-                        <form className="flex flex-col items-center justify-center w-full">
-                          {error && <div className="text-500 mb-4">{error}</div>}
-                          <h4 className="mb-1 ">Logar</h4>
-                          <div className="social">
-                        <div className="social-container">
-                        <a href="">
-                          <FaFacebook
-                             size={25}
-                             className="text-beje dark:text-lightblue hover:scale-110"
-                             aria-label="Ícone do Facebook, que irá te permitir inserir os dados da sua conta Facebook ao IndaiaCult"
-                          />
-                        </a></div>
-                        <div className="social-container">
-                        <a href="">
-                          <FaInstagram
-                              size={25}
-                              className="text-beje dark:text-lightblue hover:scale-110"
-                              aria-label="Ícone do Instagram, que irá te permitir inserir os dados da sua conta Instagram ao IndaiaCult"
-                          />
-                        </a></div>
-                        <div className="social-container">
-                        <a href="">
-                          <FaGoogle
-                              size={23}
-                              className="text-beje dark:text-lightblue hover:scale-110"
-                              aria-label="Ícone do Google, que irá te permitir inserir os dados da sua conta Google ao IndaiaCult"
-                          />
-                        </a>
-                        </div>
-                      </div> <br />
-                          <div className="form-group">
-                            <input
-                              type="email"
-                              className="form-style dark:bg-darkblue"
-                              placeholder="Email"
-                              value={email}
-                              onChange={(e) => setEmail(e.target.value)}
-                            />
-                            <i className="input-icon uil uil-at" />
-                          </div>
-                          <div className="form-group mt-3">
-                            <input
-                              type="password"
-                              className="form-style dark:bg-darkblue"
-                              placeholder="Senha"
-                              value={password}
-                              onChange={(e) => setPassword(e.target.value)}
-                            />
-                            <i className="input-icon uil uil-lock-alt" />
-                          </div> <br />
-                          <button
-                            onClick={handleLogin}
-                            className="bg-main dark:bg-lightblue w-72 py-3 hover:bg-beje text-white rounded-md"
-                          >
-                           Entrar
-                          </button>
-                          <p className="mb-0 mt-4 text-center dark:text-yellow">
-                        <a className="dark:text-yellow  dark:hover:text-main" href="./senha" type="link">
-                          Esqueceu a senha?
-                        </a>
-                          </p>
-                        </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-        </body>
-    </>
-    
-  );
-};
-
-export default Login;
-
-/*
-return (
-    <div>
-      <div className="flex flex-col gap-9 items-center justify-center w-full">
-        <h1 className="font-bold text-3xl ">Login</h1>
-        <p>
-          Não possui uma conta?{" "}
-          <a href="/cadastro" className="text-lightblue">
-            Cadastre-se
-          </a>
-        </p>
+        <ul>
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+        </ul>
       </div>
-      <form className="flex flex-col items-center gap-20 justify-center w-full">
-        {error && <div className="text-red-500 mb-4">{error}</div>}
-        <input
-          type="email"
-          placeholder="Insira seu Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="border border-white border-b-lightblue mt-16 outline-none w-72"
-        />
-        <input
-          type="password"
-          placeholder="Senha"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="border border-white border-b-lightblue outline-none w-72"
-        />
-        <button
-          onClick={handleLogin}
-          className="bg-lightblue w-72 py-3 hover:bg-darkblue text-white rounded-md"
-        >
-          Entrar
-        </button>
-      </form>
-    </div>
+      <section className="mt-20 flex flex-col items-center justify-center">
+        <div className="rounded-xl z-10 relative bg-white dark:bg-diffBlack dark:text-white border-highlight dark:border-highlightDark border-4 px-24 py-12 flex flex-col items-center gap-8">
+          <h1 className="font-semibold font-montserrat text-xl lg:text-4xl">
+            Bem vindo ao <span className="text-main  font-bold">Indaia</span>
+            <span className="text-darkblue dark:text-lightblue  font-bold">
+              Cult.
+            </span>
+          </h1>
+
+          <form
+            onSubmit={handleLogin}
+            className="flex flex-col gap-6 text-xl w-full"
+          >
+            <label htmlFor="">
+              <span className="font-montserrat">E-mail</span>
+              <div className="flex items-center gap-4 border-4 border-highlight dark:border-highlightDark p-3 rounded-lg">
+                <MdOutlineAlternateEmail className="text-darkblue dark:text-lightblue text-2xl" />
+                <input
+                  type="text"
+                  placeholder="Insira seu e-mail"
+                  className="font-montserrat bg-transparent "
+                />
+              </div>
+            </label>
+            <label htmlFor="">
+              <span className="font-montserrat">Senha</span>
+              <div className="flex items-center gap-4 border-4 border-highlight dark:border-highlightDark  p-3 rounded-lg">
+                <MdOutlineLock className="text-darkblue dark:text-lightblue text-2xl" />
+                <input
+                  type="text"
+                  placeholder="Insira sua senha"
+                  className="font-montserrat bg-transparent "
+                />
+              </div>
+            </label>
+
+            <button
+              type="submit"
+              className="py-2 font-bold rounded-lg bg-darkblue dark:bg-lightblue text-white hover:bg-main dark:hover:bg-main"
+            >
+              Entrar
+            </button>
+          </form>
+          <div className="flex items-center gap-4">
+            <span className="text-3xl text-darkblue dark:text-lightblue p-2 rounded-full border-2 border-darkblue dark:border-lightblue">
+              <FaInstagram className="hover:scale-110"/>
+            </span>
+            <span className="text-3xl text-darkblue dark:text-lightblue p-2 rounded-full border-2 border-darkblue dark:border-lightblue">
+              <FaFacebook className="hover:scale-110"/>
+            </span>
+            <span className="text-3xl text-darkblue dark:text-lightblue p-2 rounded-full border-2 border-darkblue dark:border-lightblue">
+              <FaGoogle className="hover:scale-110"/>
+            </span>
+          </div>
+          <Link to="/senha" className="text-xl underline hover:text-main">
+            Esqueceu a senha?
+          </Link>
+          <Link to="/cadastro" className="text-xl underline hover:text-main">
+            Não possui uma conta?
+          </Link>
+        </div>
+      </section>
+    </>
   );
 };
+
 export default Login;
-*/

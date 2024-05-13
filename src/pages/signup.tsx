@@ -1,7 +1,12 @@
 import React from "react";
-import { useState } from "react";
 import axios from "axios";
+import { useState } from "react";
+import "../../public/css/animation.css";
+import { MdOutlineAlternateEmail, MdOutlineLock } from "react-icons/md";
+import { Link } from "react-router-dom";
+import LandingNav from "../components/LandingNav";
 import { useNavigate } from "react-router-dom";
+import { FaRegUser } from "react-icons/fa6";
 
 const SignUp: React.FC = () => {
   const [name, setName] = useState("");
@@ -14,11 +19,11 @@ const SignUp: React.FC = () => {
 
   const handleSignUp = async () => {
     try {
-      const response = await axios.post("http://localhost:5173/signup", {
+      const response = await axios.post("http://localhost:5173/cadastro", {
         name,
         email,
         telephone,
-        password
+        password,
       });
       console.log(response.data);
       setName("");
@@ -28,179 +33,107 @@ const SignUp: React.FC = () => {
       setSuccessMessage("Cadastro realizado com sucesso");
       navigate("/login");
     } catch (error) {
-      setError("erro ao cadastrar usuário");
+      setError("Erro ao cadastrar usuário");
       console.error(error);
     }
   };
 
   return (
     <>
-    <body>
-  <link
-    rel="stylesheet"
-    href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
-  />
-  <link rel="stylesheet" href="../../public/css/login.css" />
-  <div className="circles">
-      <ul>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-        <li className="dark:bg-lightblue"/>
-      </ul>
-    </div>
-  <div className="section">
-    <div className="container">
-      <div className="row full-height justify-content-center">
-          <div className="section pb-5 pt-5 pt-sm-2 text-center">
-            <h6 className="mb-0 pb-3">
-            <a href="./login">
-              <span className="dark:text-yellow">-&gt; Logar</span></a>
-              <span className="dark:text-yellow">Inscrever &lt;-</span>
-            </h6>
-            <div className="card-3d-wrap mx-auto dark:text-yellow">
-              <div className="card-3d-wrapper">
-                <div className="card-signup dark:bg-darkblue">
-                  <div className="center-wrap">
-                    <div className="section text-center">
-                    <form className="flex flex-col items-center justify-center w-full">
-                      {error && <div className="text-red-500 mb-4">{error}</div>}
-                      {succesMessage && (
-                        <div className="text-geen-500 mb-4">{succesMessage}</div>
-                    )}
-                      <h4 className="mb-3">Inscreva-se</h4>
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          className="form-style dark:bg-darkblue"
-                          placeholder="Nome Completo"
-                          value={name}
-                          onChange={(e) => setName(e.target.value)}
-                        />
-                        <i className="input-icon uil uil-user" />
-                      </div>
-                      <div className="form-group mt-2">
-                        <input
-                          type="tel"
-                          className="form-style dark:bg-darkblue"
-                          placeholder="Telefone"
-                          value={telephone}
-                          onChange={(e) => setTelephone(e.target.value)}
-                        />
-                        <i className="input-icon uil uil-phone" />
-                      </div>
-                      <div className="form-group mt-2">
-                        <input
-                          type="email"
-                          className="form-style dark:bg-darkblue"
-                          placeholder="Email"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <i className="input-icon uil uil-at" />
-                      </div>
-                      <div className="form-group mt-2">
-                        <input
-                          type="password"
-                          className="form-style dark:bg-darkblue"
-                          placeholder="Senha"
-                          value={password}
-                          onChange={(e) => setPassword(e.target.value)}
-                        />
-                        <i className="input-icon uil uil-lock-alt" />
-                      </div> <br />
-                      <button
-                        onClick={handleSignUp}
-                        className="bg-main dark:bg-lightblue w-72 py-3 hover:bg-beje text-white rounded-md"
-                        >
-                          Criar conta
-                      </button>
-                      <p className="mb-0 mt-2 text-center dark:text-yellow">
-                        <a
-                          href="./artista"
-                          className="dark:text-yellow  dark:hover:text-main"
-                          type="link"
-                        >
-                          Você é artista? Clique aqui
-                        </a>
-                      </p>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <LandingNav />
+      <div className="circles">
+        <ul>
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+          <li className="dark:bg-lightblue" />
+        </ul>
       </div>
-    </div>
-  </body>
-</>
+      <section className="mt-6 flex flex-col items-center justify-center">
+        <div className="rounded-xl relative bg-white dark:bg-diffBlack dark:text-white border-highlight dark:border-highlightDark border-4 px-24 py-14 flex flex-col items-center gap-8">
+          <h1 className="font-semibold font-montserrat text-xl lg:text-4xl">
+            Bem vindo ao <span className="text-main  font-bold">Indaia</span>
+            <span className="text-darkblue dark:text-lightblue  font-bold">
+              Cult.
+            </span>
+          </h1>
+
+          <form
+            onSubmit={handleSignUp}
+            className="flex flex-col gap-6 text-xl w-full"
+          >
+            <label htmlFor="">
+              <span className="font-montserrat">Nome</span>
+              <div className="flex items-center gap-4 border-4 border-highlight dark:border-highlightDark p-3 rounded-lg">
+                <FaRegUser className="text-darkblue dark:text-lightblue text-2xl" />
+                <input
+                  type="text"
+                  placeholder="Insira seu nome"
+                  className="font-montserrat bg-transparent "
+                />
+              </div>
+            </label>
+            <label htmlFor="">
+              <span className="font-montserrat">E-mail</span>
+              <div className="flex items-center gap-4 border-4 border-highlight dark:border-highlightDark p-3 rounded-lg">
+                <MdOutlineAlternateEmail className="text-darkblue dark:text-lightblue text-2xl" />
+                <input
+                  type="text"
+                  placeholder="Insira seu e-mail"
+                  className="font-montserrat bg-transparent "
+                />
+              </div>
+            </label>
+            <label htmlFor="">
+              <span className="font-montserrat">Senha</span>
+              <div className="flex items-center gap-4 border-4 border-highlight dark:border-highlightDark  p-3 rounded-lg">
+                <MdOutlineLock className="text-darkblue dark:text-lightblue text-2xl" />
+                <input
+                  type="text"
+                  placeholder="Crie sua senha"
+                  className="font-montserrat bg-transparent "
+                />
+              </div>
+            </label>
+
+            <label htmlFor="">
+              <div className="flex items-center gap-4 border-4 border-highlight dark:border-highlightDark  p-3 rounded-lg">
+                <MdOutlineLock className="text-darkblue dark:text-lightblue text-2xl" />
+                <input
+                  type="text"
+                  placeholder="Confirme sua senha"
+                  className="font-montserrat bg-transparent "
+                />
+              </div>
+            </label>
+
+            <button
+              type="submit"
+              className="py-2 font-bold rounded-lg bg-darkblue dark:bg-lightblue text-white hover:bg-main dark:hover:bg-main"
+            >
+              Cadastrar-se
+            </button>
+          </form>
+          <Link to="/login" className="text-xl underline hover:text-main">
+            Já possui uma conta?
+          </Link>
+          <Link to="/login" className="text-xl underline hover:text-main">
+            Você é artista? Cadastre-se
+          </Link>
+        </div>
+      </section>
+    </>
   );
 };
 
 export default SignUp;
-
-/* 
-
-return (
-    <div>
-      <div className="flex flex-col gap-9 items-center justify-center w-full">
-        <h1 className="text-4xl font-bold">Cadastre-se</h1>
-        <p>
-          Já possui uma conta? Faça{" "}
-          <a href="/login" className="text-lightblue">
-            Login
-          </a>
-        </p>
-      </div>
-      <form className="flex flex-col items-center gap-8 justify-center w-full">
-        {error && <div className="text-red-500 mb-4">{error}</div>}
-        {succesMessage && (
-          <div className="text-geen-500 mb-4">{succesMessage}</div>
-        )}
-        <input
-          type="text"
-          placeholder="Insira seu nome"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="border border-white border-b-lightblue mt-16 outline-none w-72"
-        />
-        <input
-          type="email"
-          placeholder="Insira seu Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="border border-white border-b-lightblue mt-16 outline-none w-72"
-        />
-        <input
-          type="password"
-          placeholder="Crie uma senha"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="border border-white border-b-lightblue mt-16 outline-none w-72"
-        />
-        <button
-          onClick={handleSignUp}
-          className="bg-lightblue w-72 py-3 hover:bg-darkblue text-white rounded-md"
-        >
-          Criar conta
-        </button>
-      </form>
-    </div>
-
-*/

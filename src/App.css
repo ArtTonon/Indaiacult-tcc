@@ -2,8 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  overflow: hidden;
+  background-color: white;
+}
+body.dark {
+  background-color: black;
+}
+
 iconify-icon {
   display: inline-block;
   width: 1em;
   height: 1em;
+}
+
+body.dark .backgroundLanding,
+.backgroundLanding {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(248, 112, 96, 0.773546918767507) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+body.dark .backgroundLanding {
+  background: rgb(23, 23, 23);
+  background: linear-gradient(
+    90deg,
+    rgba(23, 23, 23, 1) 0%,
+    rgba(24, 56, 99, 0.8855917366946778) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }

@@ -44,6 +44,46 @@ const handleFileUploadChange = (event: Event) => {
 };
 
 /*Tipo de Artes*/
+document.addEventListener("DOMContentLoaded", function() {
+    const selectTipos = document.getElementById('select-tipos') as HTMLSelectElement;
+    const selectedTiposContainer = document.getElementById('selected-tipos');
+
+    selectTipos.addEventListener('change', function() {
+        const selectedOption = selectTipos.options[selectTipos.selectedIndex];
+        const selectedTipo = selectedOption.value;
+
+        if (selectedTipo !== "Tipo de arte") {
+            addSelectedTipo(selectedTipo, selectedTiposContainer); // Chamar a função addSelectedTipo
+            selectedOption.style.display = "none";
+            selectedOption.disabled = true;
+            selectTipos.selectedIndex = 0;
+        }
+    });
+
+    function addSelectedTipo(tipo: string, container: HTMLElement | null) { // Adicionar container como parâmetro
+        if (!container) return; // Verificar se o container é válido
+
+        const tipoIcon = document.createElement('div');
+        tipoIcon.classList.add('tipo-icon');
+        tipoIcon.textContent = tipo;
+    
+        const removeButton = document.createElement('button');
+        removeButton.classList.add('remove-button');
+        removeButton.innerHTML = '&times;'; // "&#x2715;" é o código HTML para o símbolo "X"
+        removeButton.addEventListener('click', function() {
+            container.removeChild(tipoIcon); // Remover do container
+            const option = selectTipos.querySelector(`option[value="${tipo}"]`);
+            if (option instanceof HTMLOptionElement) {
+                option.style.display = "block";
+                option.disabled = false;
+            }
+        });
+    
+        tipoIcon.appendChild(removeButton);
+        container.appendChild(tipoIcon); // Adicionar ao container
+    }
+});
+
 
 /*Senha*/
 const handleSenhaInput = () => {
@@ -121,7 +161,7 @@ const Artista: React.FC = () => {
 
     const handleArtista = async () => {
         try {
-            const response = await axios.post("http://localhost:5173/artista", {
+            const response = await axios.post("http://localhost:8000/artistas", {
                 name,
                 email,
                 telephone,
@@ -160,7 +200,7 @@ const Artista: React.FC = () => {
                 rel="stylesheet"
                 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
             />
-            <link rel="stylesheet" href="../../public/css/artista.css" />
+            <link rel="stylesheet" href="../css/artista.css" />
             <title>Tela Login</title>
             <div className="card">
                 {error && <div className="text-red-500 mb-4">{error}</div>}
@@ -319,7 +359,7 @@ const Artista: React.FC = () => {
                                 />
                                 <p id="error" className="error" /> <br />
                                 <button className="text-white bg-darkblue hover:bg-main" onClick={verificarLink}>Verificar Link</button>
-                            </div>{" "}
+                            </div>
                             <br />
                         </div>
                     </div>

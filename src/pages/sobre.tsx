@@ -1,7 +1,11 @@
-import React from "react";
+import LandingNav from "../components/LandingNav";
 
 const SobrePage = () => {
-  return <div>SobrePage</div>;
+  return (
+    <section>
+      <LandingNav />
+    </section>
+  );
 };
 
 export default SobrePage;
