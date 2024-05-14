@@ -10,11 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mui/material": "^5.15.17",
     "@types/node": "^20.12.7",
     "@types/react-router-dom": "^5.3.3",
     "antd": "^5.14.1",
     "autoprefixer": "^10.4.17",
     "axios": "^1.6.8",
+    "firebase": "^10.12.0",
     "iconify": "^1.4.0",
     "lucide-react": "^0.336.0",
     "postcss": "^8.4.35",

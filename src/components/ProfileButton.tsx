@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTheme } from "../context";
 import { FaCog, FaUserPlus } from "react-icons/fa";
 import { FaArrowRightArrowLeft, FaArrowRightToBracket, FaAsterisk, FaBookmark, FaComments, FaPenFancy, FaPlus, FaQuestion } from "react-icons/fa6";
 
@@ -30,6 +31,8 @@ const ProfileButton = () => {
     setMenuVisible(false);
   };
 
+  const { darkMode } = useTheme();
+
   return (
     <section>
       
@@ -48,14 +51,17 @@ const ProfileButton = () => {
               className="md:block hidden"
               width={50}
               height={50}
-              src={ "/assets/profile-dark.svg" }
+              src={  darkMode
+                ? "/assets/profile-light.svg"
+                : "/assets/profile-dark.svg"
+               }
               alt="img"
             />
           </button>
         </a>
 
         {menuVisible && (
-          <div className="absolute right-0 bg-white border border-gray-200 p-6 rounded shadow"
+          <div className="absolute right-0 bg-white border border-gray-200 p-6 rounded shadow" style={{ zIndex: 10 }}
             onMouseEnter={handleMenuMouseEnter}
             onMouseLeave={handleMenuMouseLeave}>
             <div className="menu-nav">
@@ -64,16 +70,16 @@ const ProfileButton = () => {
                 <a href=""><h3 className="name">Hugo Fonseca</h3></a> <br />
               </div>
               <ul>
-                <li><a href=""><span style={{ display: 'flex' }}><FaArrowRightArrowLeft /> Trocar</span></a></li>
-                <li><a href=""><span style={{ display: 'flex' }}><FaUserPlus />Adicionar Conta</span></a></li>
-                <li><a href=""><span style={{ display: 'flex' }}><FaPenFancy />Artista</span></a></li>
-                <li><a href=""><span style={{ display: 'flex' }}><FaPlus />Novo Post</span></a></li>
-                <li><a href=""><span style={{ display: 'flex' }}><FaBookmark />Salvos</span></a></li>
-                <li><a href=""><span style={{ display: 'flex' }}><FaComments />Comunidade</span></a></li>
-                <li><a href=""><span style={{ display: 'flex' }}><FaCog />Configurações</span></a></li>
-                <li><a href=""><span style={{ display: 'flex' }}><FaAsterisk />Termos de Serviço</span></a></li>
-                <li><a href=""><span style={{ display: 'flex' }}><FaQuestion />Duvidas</span></a></li>
-                <li><a href=""><span style={{ display: 'flex' }}><FaArrowRightToBracket />Sair</span></a></li>
+               <a href=""><span style={{ display: 'flex' }}><FaArrowRightArrowLeft /> Trocar</span></a>
+               <a href=""><span style={{ display: 'flex' }}><FaUserPlus />Adicionar_Conta</span></a>
+               <a href=""><span style={{ display: 'flex' }}><FaPenFancy />Artista</span></a>
+               <a href=""><span style={{ display: 'flex' }}><FaPlus />Novo_Post</span></a>
+               <a href=""><span style={{ display: 'flex' }}><FaBookmark />Salvos</span></a>
+               <a href=""><span style={{ display: 'flex' }}><FaComments />Comunidade</span></a>
+               <a href=""><span style={{ display: 'flex' }}><FaCog />Configurações</span></a>
+               <a href=""><span style={{ display: 'flex' }}><FaAsterisk />Termos_de_Serviço</span></a>
+               <a href=""><span style={{ display: 'flex' }}><FaQuestion />Duvidas</span></a>
+               <a href=""><span style={{ display: 'flex' }}><FaArrowRightToBracket />Sair</span></a>
               </ul>
             </div>
           </div>

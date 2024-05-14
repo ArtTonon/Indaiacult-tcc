@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import ToggleThemeButton from "./ToggleThemeButton";
 import Logo from "../../public/assets/Logo.png";
+import ProfileButton from "./ProfileButton";
 
 const LandingNav = () => {
   return (
@@ -22,6 +23,7 @@ const LandingNav = () => {
           >
             Sobre
           </Link>
+          <ProfileButton />
           <ToggleThemeButton />
         </div>
       </div>

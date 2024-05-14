@@ -66,7 +66,7 @@ export default function Perfil() {
                 type="file"
                 name="pfp"
                 onChange={(e) => {
-                  handleUpload(e);
+                handleUpload(e);
                 }}
               />
             </form>
