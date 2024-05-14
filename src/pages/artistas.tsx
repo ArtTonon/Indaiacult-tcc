@@ -227,6 +227,7 @@ const Artista: React.FC = () => {
                         <h1 className="title">Criar Artista</h1>
                         <div className="form">
                             <div className="login-container">
+
                                 <div className="profile-section">
                                     <img
                                         id="profile-image"
@@ -244,6 +245,7 @@ const Artista: React.FC = () => {
                                     />
                                 </div>
                             </div>
+                            
                             <input
                                 type="text"
                                 className="form-field"

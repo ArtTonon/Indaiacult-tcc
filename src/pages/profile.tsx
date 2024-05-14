@@ -1,5 +1,5 @@
 import { Pencil } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import { useTheme } from "../context";
 
 import { useAuth } from "../contexts/Auth.context";
@@ -8,19 +8,17 @@ import LandingNav from "../components/LandingNav";
 export default function Perfil() {
   const { user,  setAuthenticated } = useAuth();
 
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [isUploading, setIsUploading] = useState<boolean>(false);
+
   const [] =
     useState<boolean>(false);
 
-  const [isUploading, setIsUploading] = useState<boolean>(false);
 
-  const handleUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      setSelectedFile(file);
-      
-    }
-  };
+    const handleUpload = (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      setIsUploading(true);
+      // Adicione aqui sua lógica de upload, se necessário
+    };
 
   const { darkMode } = useTheme();
 
@@ -29,60 +27,66 @@ export default function Perfil() {
     setAuthenticated(false);
   };
 
-  const upload = () => {
-    if (selectedFile) {
-      setIsUploading(true);
 
-      if (selectedFile.size > 3 * 1024 * 1024) {
-        setIsUploading(false);
-        return;
-      }
-
-      
+  const handleFileUploadChange = (event: Event) => {
+    const fileInput = event.target as HTMLInputElement;
+    const file = fileInput.files?.[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            document.getElementById('profile-image')?.setAttribute('src', (event?.target as FileReader)?.result as string);
+        }
+        reader.readAsDataURL(file);
     }
   };
 
+  useEffect(() => {
+    const fileInput = document.getElementById('file-upload') as HTMLInputElement;
+    fileInput.addEventListener('change', handleFileUploadChange);
+
+    return () => {
+      fileInput.removeEventListener('change', handleFileUploadChange);
+    };
+  }, []);
+
   return (
-    <>
+<>
     <LandingNav />
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-5">
+
           <div className="flex items-end -space-x-8">
             <img
-              src={  darkMode
-                ? "/assets/profile-dark.svg"
-                : "/assets/profile-light.svg"
-               }
+              id="profile-image"
+              src={darkMode 
+                ? "/assets/profile-dark.svg" 
+                : "/assets/profile-light.svg"}
               alt="foto de perfil"
               width={128}
               height={128}
               className="md:block hidden object-cover rounded-full border-4 h-32 w-32 border-main dark:border-lightblue"
             />
-            
-            <form onSubmit={upload} className="hidden">
-              <input
-                id="pfp"
-                autoComplete="off"
-                type="file"
-                name="pfp"
-                onChange={(e) => {
-                handleUpload(e);
-                }}
-              />
+            <form onSubmit={handleUpload}>
+            <input
+              id="file-upload"
+              autoComplete="off"
+              type="file"
+              className="hidden"
+              accept="image/*"
+            />
             </form>
             <label
-              htmlFor="pfp"
-              className="cursor-pointer text-white dark:text-black p-3 bg-black dark:bg-white rounded-full shadow-xl"
+              htmlFor="file-upload"
+              className="cursor-pointer p-3 ml-4 bg-black dark:bg-white rounded-full shadow-xl"
             >
               {isUploading ? (
                 <span className="animate-spin" />
-              ) : (
-                <Pencil
-                  size={20}
-                  className="text-purple dark:text-green"
-                />
-              )}
+                ) : (
+                  <Pencil size={20}
+                  className=" text-white dark:text-black" />
+                )}
             </label>
+
           </div>
           <h1 className="text-4xl dark:text-white">{user.name}</h1>
         </div>
