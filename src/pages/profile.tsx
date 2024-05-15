@@ -4,6 +4,7 @@ import { useTheme } from "../context";
 
 import { useAuth } from "../contexts/Auth.context";
 import LandingNav from "../components/LandingNav";
+import { FaArrowRightToBracket } from "react-icons/fa6";
 
 export default function Perfil() {
   const { user,  setAuthenticated } = useAuth();
@@ -52,18 +53,18 @@ export default function Perfil() {
   return (
 <>
     <LandingNav />
+    <div className="ml-20 mt-10">
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-5">
-
-          <div className="flex items-end -space-x-8">
+          <div className="flex items-end">
             <img
               id="profile-image"
               src={darkMode 
                 ? "/assets/profile-dark.svg" 
                 : "/assets/profile-light.svg"}
               alt="foto de perfil"
-              width={128}
-              height={128}
+              width={140}
+              height={140}
               className="md:block hidden object-cover rounded-full border-4 h-32 w-32 border-main dark:border-lightblue"
             />
             <form onSubmit={handleUpload}>
@@ -77,7 +78,7 @@ export default function Perfil() {
             </form>
             <label
               htmlFor="file-upload"
-              className="cursor-pointer p-3 ml-4 bg-black dark:bg-white rounded-full shadow-xl"
+              className="cursor-pointer p-3 bg-black dark:bg-white rounded-full shadow-xl"
             >
               {isUploading ? (
                 <span className="animate-spin" />
@@ -86,15 +87,15 @@ export default function Perfil() {
                   className=" text-white dark:text-black" />
                 )}
             </label>
-
           </div>
           <h1 className="text-4xl dark:text-white">{user.name}</h1>
         </div>
-        <button className="bg-main dark:bg-lightblue text-white font-bold py-2 px-8 rounded-lg" 
-        onClick={logout}>
-          Sair
-        </button>
-      </div>      
+      </div>    
+      <button className="mt-8 py-4 px-14 font-bold rounded-lg bg-lightblue dark:bg-main text-white text-xl hover:bg-darkblue dark:hover:bg-darkblue flex items-center justify-center space-x-2" onClick={logout}>
+        <FaArrowRightToBracket /> <span>Sair</span>
+      </button>
+ 
+    </div> 
     </>
   );
 }

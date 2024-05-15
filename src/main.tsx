@@ -19,6 +19,7 @@ import ArtistDetailstPage from "./pages/atistsdetail.jsx";
 import { UserProvider } from "./userContext.tsx";
 import PrivateRoute from "./privateRoute.tsx";
 import CreateArtist from "./pages/createartist.tsx";
+import NotFound from "./components/NotFound";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -27,12 +28,11 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <ThemeProvider>
           <Routes>
             <Route
-              path="/*"
               element={
                 <Layout>
                   <PrivateRoute element={<ArtistasPage />} path="/artists" />
                   <PrivateRoute element={<ObrasPage />} path="/obras" />
-                  <PrivateRoute element={<ProfilePage />} path="/perfil" />
+                  
                   <PrivateRoute
                     element={<ArtistDetailstPage />}
                     path="/artist/:id"
@@ -48,6 +48,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route element={<SenhaPage />} path="/senha" />
             <Route element={<CriarPage />} path="/criar" />
             <Route element={<ArtistaPage />} path="/artistas" />
+            <Route element={<NotFound />} path="/*" />
+            <Route element={<ProfilePage />} path="/perfil" />
           </Routes>
         </ThemeProvider>
       </UserProvider>

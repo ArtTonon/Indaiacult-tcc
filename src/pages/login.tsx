@@ -70,7 +70,7 @@ const Login: React.FC = () => {
             </label>
             <label htmlFor="">
               <span className="font-montserrat">Senha</span>
-              <div className="flex items-center gap-4 border-4 border-highlight dark:border-highlightDark  p-3 rounded-lg">
+              <div className="flex items-center gap-4 border-4 border-highlight dark:border-highlightDark p-3 rounded-lg">
                 <MdOutlineLock className="text-darkblue dark:text-lightblue text-2xl" />
                 <input
                   type="text"
