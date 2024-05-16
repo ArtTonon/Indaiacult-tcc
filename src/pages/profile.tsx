@@ -5,9 +5,11 @@ import { useTheme } from "../context";
 import { useAuth } from "../contexts/Auth.context";
 import LandingNav from "../components/LandingNav";
 import { FaArrowRightToBracket } from "react-icons/fa6";
+import { AiOutlinePicture } from "react-icons/ai";
 
 export default function Perfil() {
   const { user,  setAuthenticated } = useAuth();
+  const [capa, setCapa] = useState<string>("/assets/capa.svg"); // Estado inicial da capa
 
   const [isUploading, setIsUploading] = useState<boolean>(false);
 
@@ -28,6 +30,18 @@ export default function Perfil() {
     setAuthenticated(false);
   };
 
+// Função para lidar com o clique no botão e selecionar uma nova imagem
+    const trocarCapa = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0]; // Obter o arquivo de imagem selecionado pelo usuário
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = () => {
+                const result = reader.result as string;
+                setCapa(result); // Atualizar o estado da capa para exibir a nova imagem
+            };
+            reader.readAsDataURL(file);
+        }
+    };
 
   const handleFileUploadChange = (event: Event) => {
     const fileInput = event.target as HTMLInputElement;
@@ -53,6 +67,16 @@ export default function Perfil() {
   return (
 <>
     <LandingNav />
+   
+    <div className="flex justify-center">
+            <div className="rounded-xl bg-white border-highlight border-4 px-1 py-1 ml-80 mr-80 w-screen h-80 flex items-center justify-center relative overflow-hidden">
+                <img src={capa} alt="" className="h-full object-cover" width={300} />
+                <label htmlFor="fileInput" className="cursor-pointer absolute bottom-6 right-6 w-12 h-12 bg-white rounded-full px-2 shadow-md aspect-w-16 aspect-h-9">
+                    <AiOutlinePicture className="float-right text-333 text-3xl mt-2" /> 
+                    <input id="fileInput" type="file" accept="image/*" className="hidden" onChange={trocarCapa} />
+                </label>
+            </div>
+        </div>
     <div className="ml-20 mt-10">
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-5">
@@ -63,9 +87,9 @@ export default function Perfil() {
                 ? "/assets/profile-dark.svg" 
                 : "/assets/profile-light.svg"}
               alt="foto de perfil"
-              width={140}
-              height={140}
-              className="md:block hidden object-cover rounded-full border-4 h-32 w-32 border-main dark:border-lightblue"
+              width={240}
+              height={240}
+              className="md:block hidden object-cover rounded-full border-4 h-40 w-40 border-main dark:border-lightblue "
             />
             <form onSubmit={handleUpload}>
             <input

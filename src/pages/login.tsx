@@ -48,7 +48,7 @@ const Login: React.FC = () => {
         <div className="rounded-xl z-10 relative bg-white dark:bg-diffBlack dark:text-white border-highlight dark:border-highlightDark border-4 px-24 py-12 flex flex-col items-center gap-8">
           <h1 className="font-semibold font-montserrat text-xl lg:text-4xl">
             Bem vindo ao <span className="text-main  font-bold">Indaia</span>
-            <span className="text-darkblue dark:text-lightblue  font-bold">
+            <span className="text-darkblue dark:text-lightblue font-bold">
               Cult.
             </span>
           </h1>
