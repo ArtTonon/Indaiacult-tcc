@@ -61,7 +61,7 @@ const ProfileButton = () => {
         </a>
 
         {menuVisible && (
-          <div className="absolute right-0 bg-white border border-gray-200 p-6 rounded shadow" style={{ zIndex: 10 }}
+          <div className="absolute bottom:100% bg-white border border-gray-200 p-6 rounded shadow" style={{ zIndex: 10 }}
             onMouseEnter={handleMenuMouseEnter}
             onMouseLeave={handleMenuMouseLeave}>
             <div className="menu-nav">

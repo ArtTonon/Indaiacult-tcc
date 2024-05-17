@@ -6,15 +6,17 @@ const PrivateRoute: React.FC<{ element: React.ReactNode; path: string }> = ({
   element,
   path,
 }) => {
-  const { user, artist } = useUser(); //remover user e artist e criar variável isLoggedIn
+  const { isLoggedIn } = useUser();
 
-  const isAuthenticated = user !== null || artist !== null;
+  if (isLoggedIn === null) {
+    return <p>carregando</p>;
+  }
 
   return (
     <Routes>
       <Route
         path={path}
-        element={isAuthenticated ? element : <Navigate to="/login" replace />}
+        element={isLoggedIn ? element : <Navigate to="/login" replace />}
       />
     </Routes>
   );

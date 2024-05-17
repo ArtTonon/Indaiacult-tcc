@@ -11,7 +11,7 @@ const Layout = ({ children }: Props) => {
     <div className="flex dark:text-white gap-12 overflow-hidden h-screen">
       <NavBar />
 
-      <main className="flex w-full flex-grow lg:my-8 p-6 lg:p-0 flex-col overflow-y-scroll">
+      <main className="flex w-full lg:my-8 p-6 lg:p-0 flex-col overflow-y-scroll">
         {children}
       </main>
 

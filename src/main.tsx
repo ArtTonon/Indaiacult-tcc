@@ -8,7 +8,6 @@ import LoginPage from "./pages/login.tsx";
 import SignUpPage from "./pages/signup.tsx";
 import SenhaPage from "./pages/senha.tsx";
 import CriarPage from "./pages/criar.tsx";
-import ArtistaPage from "./pages/artistas.tsx";
 import ArtistasPage from "./pages/artists.tsx";
 import ProfilePage from "./pages/profile.tsx";
 import ObrasPage from "./pages/obras.tsx";
@@ -20,6 +19,8 @@ import { UserProvider } from "./userContext.tsx";
 import PrivateRoute from "./privateRoute.tsx";
 import CreateArtist from "./pages/createartist.tsx";
 import NotFound from "./components/NotFound";
+import SobreDetailPage from "./pages/sobredetail.tsx";
+import InfoAdicionaisPage from "./pages/infoadicionais.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -32,11 +33,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                 <Layout>
                   <PrivateRoute element={<ArtistasPage />} path="/artists" />
                   <PrivateRoute element={<ObrasPage />} path="/obras" />
-                  
-                  <PrivateRoute
-                    element={<ArtistDetailstPage />}
-                    path="/artist/:id"
-                  />
+                  <PrivateRoute element={<SobreDetailPage />} path="/sobre:id" />
+                  <PrivateRoute element={<ArtistDetailstPage />} path="/artist/:id" />
                 </Layout>
               }
             />
@@ -47,9 +45,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route element={<SignUpPage />} path="/cadastro" />
             <Route element={<SenhaPage />} path="/senha" />
             <Route element={<CriarPage />} path="/criar" />
-            <Route element={<ArtistaPage />} path="/artistas" />
             <Route element={<NotFound />} path="/*" />
             <Route element={<ProfilePage />} path="/perfil" />
+            <Route element={<InfoAdicionaisPage />} path="/informacoes-adicionais" />
           </Routes>
         </ThemeProvider>
       </UserProvider>

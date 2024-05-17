@@ -11,7 +11,7 @@ const ArtistsPage = () => {
     >
       <div className="flex flex-col gap-5">
         {artists.map((artista) => (
-          <ArtistCard artista={artista} key={artista.id} />
+          <ArtistCard artista={artista} key={artista._id} />
         ))}
       </div>
     </Section>

@@ -1,38 +1,68 @@
-import React, { createContext, ReactNode, useContext, useState } from "react";
-
-interface User {
-  id: string;
-  name: string;
-  img: string;
-  email: string;
-}
-
-interface Artist extends User {
-  genre: string;
-  description: string;
-  image: string;
-  banner: string;
-}
+import React, {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+import { Usuario } from "./interfaces/UserInterface";
+import { Artista } from "./interfaces/ArtistInterface";
 
 interface UserContextType {
-  user: User | null;
-  artist: Artist | null;
-  setUser: (user: User | null) => void;
-  setArtist: (artist: Artist | null) => void;
+  usuario: Usuario | null;
+  artista: Artista | null;
+  isLoggedIn: boolean | null;
+  keepLoggedIn: () => void;
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<User | null>({
-    email: "",
-    id: "",
-    img: "",
-    name: "aaaa",
-  });
-  const [artist, setArtist] = useState<Artist | null>(null);
+  const [usuario, setUsuario] = useState<Usuario | null>(null);
+  const [artista, setArtista] = useState<Artista | null>(null);
+
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean | null>(null);
+
+  const keepLoggedIn = () => {
+    const storedUser = localStorage.getItem("user");
+    const storedArtist = localStorage.getItem("artist");
+
+    if (storedUser) {
+      const parsed = JSON.parse(storedUser) as Usuario;
+      const isValidToken: boolean =
+        parsed.token ==
+        document.cookie
+          .split("; ")
+          .find((row) => row.trim().startsWith("jwt="))
+          ?.split("=")[1];
+      console.log(isValidToken);
+      if (isValidToken) {
+        setUsuario(parsed);
+        setIsLoggedIn(true);
+      }
+    } else if (storedArtist) {
+      const parsed = JSON.parse(storedArtist) as Artista;
+      const isValidToken: boolean =
+        parsed.token ===
+        document.cookie
+          .split("; ")
+          .find((row) => row.trim().startsWith("jwt="))
+          ?.split("=")[1];
+      if (isValidToken) {
+        setArtista(parsed);
+        setIsLoggedIn(true);
+      }
+    }
+  };
+
+  useEffect(() => {
+    keepLoggedIn();
+  }, []);
+
   return (
-    <UserContext.Provider value={{ user, setUser, artist, setArtist }}>
+    <UserContext.Provider
+      value={{ isLoggedIn, usuario, artista, keepLoggedIn }}
+    >
       {children}
     </UserContext.Provider>
   );

@@ -5,6 +5,7 @@ import ToggleThemeButton from "./ToggleThemeButton";
 import { LuPalette } from "react-icons/lu";
 import { Link, useLocation } from "react-router-dom";
 import { PiFrameCorners } from "react-icons/pi";
+import { IoInformationCircleOutline } from "react-icons/io5";
 
 const NavLink = ({
   icon,
@@ -35,6 +36,11 @@ const NavLinks = () => {
     <>
       <NavLink path="artists" name="Artistas" icon={<LuPalette />} />
       <NavLink path="obras" name="Obras" icon={<PiFrameCorners />} />
+      <NavLink
+        path="sobre"
+        name="Sobre"
+        icon={<IoInformationCircleOutline />}
+      />
 
       <LoginButton></LoginButton>
       <ToggleThemeButton></ToggleThemeButton>
