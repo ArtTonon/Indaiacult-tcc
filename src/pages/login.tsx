@@ -98,7 +98,7 @@ const Login: React.FC = () => {
               <FaGoogle className="hover:scale-110"/>
             </span>
           </div>
-          <Link to="/senha" className="text-xl underline hover:text-main">
+          <Link to="/artists" className="text-xl underline hover:text-main">
             Esqueceu a senha?
           </Link>
           <Link to="/cadastro" className="text-xl underline hover:text-main">

@@ -31,10 +31,10 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route
               element={
                 <Layout>
-                  <PrivateRoute element={<ArtistasPage />} path="/artists" />
-                  <PrivateRoute element={<ObrasPage />} path="/obras" />
-                  <PrivateRoute element={<SobreDetailPage />} path="/sobre:id" />
-                  <PrivateRoute element={<ArtistDetailstPage />} path="/artist/:id" />
+                  <Route element={<ArtistasPage />} path="/artists" />
+                  <Route element={<ObrasPage />} path="/obras" />
+                  <Route element={<SobreDetailPage />} path="/sobre:id" />
+                  <Route element={<ArtistDetailstPage />} path="/artist/:id" />
                 </Layout>
               }
             />
