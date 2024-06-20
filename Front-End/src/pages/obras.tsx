@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import ObrasCard from "../components/ObrasCard";
 import Section from "../components/Section";
-import { obras } from "../obrasMock";
 import { seeAll } from "../services/ObraService";
 import { Obras } from "../interfaces/ObrasInterface";
 

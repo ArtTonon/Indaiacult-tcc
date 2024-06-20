@@ -26,11 +26,11 @@ const ObrasCard: React.FC<{
         <div className="flex items-center justify-between">
           <div className="flex flex-col md:flex-row items-center gap-4">
             <img
-              src={obra.autor?.imagem}
+              src={obra.imagem}
               alt="Foto do artista"
               className="h-12 w-12 rounded-full object-cover"
             />
-            <h2>{obra.autor?.nome}</h2>
+            <h2>{obra.autor}</h2>
           </div>
           <h3 className="border-2 rounded-full capitalize py-2 px-4 border-darkblue dark:border-lightblue">
             {obra.genero}
