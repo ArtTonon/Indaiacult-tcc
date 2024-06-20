@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/(.*)",
+        "destination": "https://back-end-three-swart.vercel.app/api/$1"
+      }
+    ]
+  }
+  
