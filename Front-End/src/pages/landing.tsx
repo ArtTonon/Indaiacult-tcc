@@ -1,5 +1,4 @@
 import LandingButton from "../components/LandingButton";
-import { useTheme } from "../context";
 import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa6";
 import LandingNav from "../components/LandingNav";
 import "../App.css";

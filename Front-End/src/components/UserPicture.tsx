@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import { useUser } from "../userContext";
-import { GoPencil } from "react-icons/go";
 import { Link } from "react-router-dom";
 
 const UserPicture = () => {

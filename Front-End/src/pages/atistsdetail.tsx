@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { Artista } from "../interfaces/ArtistInterface";
-import { seeAll, seeById } from "../services/ArtistService";
+import { seeById } from "../services/ArtistService";
 
 const ArtistDetailstPage = () => {
   const { id } = useParams();

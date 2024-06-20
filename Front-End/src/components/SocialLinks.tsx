@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { FaFacebook, FaInstagram } from "react-icons/fa6";
 

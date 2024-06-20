@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import "../css/login.css";
 import { MdOutlineAlternateEmail, MdOutlineLock } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -11,25 +10,22 @@ import { signUpArtista } from "../services/ArtistService";
 import { GoPencil } from "react-icons/go";
 import { storage } from "../firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import SocialLinks from "../components/SocialLinks";
 
 const SignUpArtist = () => {
   const { keepLoggedIn } = useUser();
   const [name, setName] = useState("");
   const [genre, setGenre] = useState("");
   const [description, setDescription] = useState("");
-  const [url, setUrl] = useState("");
   const [image, setImage] = useState<File | undefined>(undefined);
   const [banner, setBanner] = useState<File | undefined>(undefined);
-  const [bannerUrl, setBannerUrl] = useState("");
-  const [redessociais, setRedessociais] = useState([""]);
   const [instagram, setInstagram] = useState("");
   const [facebook, setFacebook] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState(""); // Adicionado
+
   const navigate = useNavigate();
 
   const handleSignUp = async (event: React.FormEvent) => {
@@ -41,8 +37,10 @@ const SignUpArtist = () => {
       }
 
       if (!image || !banner) {
+        setError("Por favor, selecione uma imagem de perfil e um banner.");
         return;
       }
+
       const imageRef = ref(storage, `image/${email}`);
       await uploadBytes(imageRef, image);
       const imageUrl = await getDownloadURL(imageRef);
@@ -51,7 +49,7 @@ const SignUpArtist = () => {
       await uploadBytes(bannerRef, banner);
       const downloadUrl = await getDownloadURL(bannerRef);
 
-      const error = await signUpArtista(
+      const signUpError = await signUpArtista(
         name,
         email,
         password,
@@ -62,8 +60,8 @@ const SignUpArtist = () => {
         downloadUrl
       );
 
-      if (error) {
-        setError(error);
+      if (signUpError) {
+        setError(signUpError);
         return;
       }
 
@@ -72,7 +70,7 @@ const SignUpArtist = () => {
       setPassword("");
       setConfirmPassword("");
       setGenre("");
-      setSuccessMessage("Cadastro realizado com sucesso");
+      setSuccessMessage("Cadastro realizado com sucesso"); // Definindo sucesso aqui
       keepLoggedIn();
       navigate("/artists");
     } catch (error) {
@@ -86,20 +84,9 @@ const SignUpArtist = () => {
       <LandingNav />
       <div className="circles">
         <ul>
-          <li className="dark:bg-lightblue" />
-          <li className="dark:bg-lightblue" />
-          <li className="dark:bg-lightblue" />
-          <li className="dark:bg-lightblue" />
-          <li className="dark:bg-lightblue" />
-          <li className="dark:bg-lightblue" />
-          <li className="dark:bg-lightblue" />
-          <li className="dark:bg-lightblue" />
-          <li className="dark:bg-lightblue" />
-          <li className="dark:bg-lightblue" />
-          <li className="dark:bg-lightblue" />
-          <li className="dark:bg-lightblue" />
-          <li className="dark:bg-lightblue" />
-          <li className="dark:bg-lightblue" />
+          {[...Array(14)].map((_, index) => (
+            <li key={index} className="dark:bg-lightblue" />
+          ))}
         </ul>
       </div>
       <form
@@ -285,6 +272,10 @@ const SignUpArtist = () => {
               >
                 Cadastrar Informações
               </button>
+              {successMessage && (
+                <p className="text-green-500">{successMessage}</p>
+              )}
+              {error && <p className="text-red-500">{error}</p>}
             </div>
           </div>
         </section>

@@ -7,7 +7,7 @@ import { obras } from "../obrasMock";
 const ObrasDetailstPage = () => {
   const { id } = useParams();
 
-  const [Obras, setObras] = useState<Obras | undefined>(obras[0]); //fazer setObras
+  const [Obras] = useState<Obras | undefined>(obras[0]); //fazer setObras
   if (!id || !Obras) {
     return <Navigate to={"/obras"} replace />;
   }

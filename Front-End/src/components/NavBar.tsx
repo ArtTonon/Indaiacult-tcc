@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import Nav from "./Nav";
-import { useUser } from "../userContext";
-import ProfileButton from "./ProfileButton";
 import UserPicture from "./UserPicture";
 
 const NavBar = () => {

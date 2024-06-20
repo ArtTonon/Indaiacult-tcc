@@ -1,4 +1,3 @@
-import { AxiosError } from "axios";
 import { server } from "../server";
 import { Usuario } from "../interfaces/UserInterface";
 

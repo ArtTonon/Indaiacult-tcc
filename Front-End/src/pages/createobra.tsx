@@ -1,11 +1,9 @@
-import React, { FormEvent, useState } from "react";
-import { MdOutlineAlternateEmail } from "react-icons/md";
-import { Navigate, useNavigate } from "react-router-dom";
+import { FormEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useUser } from "../userContext";
 import { GoPencil } from "react-icons/go";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { storage } from "../firebase";
-import { genero } from "../interfaces/GeneroInterface";
 import { server } from "../server";
 
 const CreateObraPage = () => {

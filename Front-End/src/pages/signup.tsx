@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { useState } from "react";
 import "../css/login.css";
 import { MdOutlineAlternateEmail, MdOutlineLock } from "react-icons/md";
@@ -13,12 +12,11 @@ import { useUser } from "../userContext";
 const SignUp: React.FC = () => {
   const { keepLoggedIn } = useUser();
   const [name, setName] = useState("");
-  const [telephone, setTelephone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
-  const [succesMessage, setSuccessMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   const navigate = useNavigate();
 
   const handleSignUp = async (event: React.FormEvent) => {
@@ -34,15 +32,16 @@ const SignUp: React.FC = () => {
       }
 
       setName("");
-      setTelephone("");
       setEmail("");
       setPassword("");
       setConfirmPassword("");
       setSuccessMessage("Cadastro realizado com sucesso");
+      setError(""); // Limpar mensagem de erro, se houver
       keepLoggedIn();
       navigate("/artists");
     } catch (error) {
-      setError("erro ao cadastrar usuário");
+      setError("Erro ao cadastrar usuário");
+      setSuccessMessage(""); // Limpar mensagem de sucesso, se houver
       console.error(error);
     }
   };
@@ -71,8 +70,8 @@ const SignUp: React.FC = () => {
       <section className="mt-6 flex flex-col items-center justify-center ">
         <div className="h-full p-8 rounded-xl relative z-10 bg-white dark:bg-diffBlack dark:text-white border-highlight dark:border-highlightDark border-4 px-16 py-8 md:px-20 flex flex-col items-center gap-2 md:gap-8">
           <h1 className="font-semibold font-montserrat text-xl lg:text-4xl">
-            Bem vindo ao <span className="text-main  font-bold">Indaia</span>
-            <span className="text-darkblue dark:text-lightblue  font-bold">
+            Bem vindo ao <span className="text-main font-bold">Indaia</span>
+            <span className="text-darkblue dark:text-lightblue font-bold">
               Cult.
             </span>
           </h1>
@@ -81,7 +80,7 @@ const SignUp: React.FC = () => {
             onSubmit={handleSignUp}
             className="flex flex-col gap-6 text-xl w-full"
           >
-            <label htmlFor="">
+            <label>
               <span className="font-montserrat">Nome</span>
               <div className="flex items-center gap-4 border-4 border-highlight dark:border-highlightDark p-3 rounded-lg">
                 <FaRegUser className="text-darkblue dark:text-lightblue text-2xl" />
@@ -94,7 +93,7 @@ const SignUp: React.FC = () => {
                 />
               </div>
             </label>
-            <label htmlFor="">
+            <label>
               <span className="font-montserrat">E-mail</span>
               <div className="flex items-center gap-4 border-4 border-highlight dark:border-highlightDark p-3 rounded-lg">
                 <MdOutlineAlternateEmail className="text-darkblue dark:text-lightblue text-2xl" />
@@ -107,32 +106,42 @@ const SignUp: React.FC = () => {
                 />
               </div>
             </label>
-            <label htmlFor="">
+            <label>
               <span className="font-montserrat">Senha</span>
-              <div className="flex items-center gap-4 border-4 border-highlight dark:border-highlightDark  p-3 rounded-lg">
+              <div className="flex items-center gap-4 border-4 border-highlight dark:border-highlightDark p-3 rounded-lg">
                 <MdOutlineLock className="text-darkblue dark:text-lightblue text-2xl" />
                 <input
                   type="password"
                   placeholder="Crie sua senha"
-                  className="font-montserrat bg-transparent "
+                  className="font-montserrat bg-transparent"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
             </label>
 
-            <label htmlFor="">
-              <div className="flex items-center gap-4 border-4 border-highlight dark:border-highlightDark  p-3 rounded-lg">
+            <label>
+              <span className="font-montserrat">Confirme sua senha</span>
+              <div className="flex items-center gap-4 border-4 border-highlight dark:border-highlightDark p-3 rounded-lg">
                 <MdOutlineLock className="text-darkblue dark:text-lightblue text-2xl" />
                 <input
                   type="password"
                   placeholder="Confirme sua senha"
-                  className="font-montserrat bg-transparent "
+                  className="font-montserrat bg-transparent"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
               </div>
             </label>
+
+            {error && (
+              <div className="text-red-500 font-montserrat text-sm">{error}</div>
+            )}
+            {successMessage && (
+              <div className="text-green-500 font-montserrat text-sm">
+                {successMessage}
+              </div>
+            )}
 
             <button
               type="submit"

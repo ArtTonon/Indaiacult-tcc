@@ -1,6 +1,5 @@
 import SobreCard from "../components/SobreCard";
 import { sobre } from "../sobreMock";
-import { Sobre } from "../interfaces/SobreInterface";
 
 const SobrePage = () => {
   return (

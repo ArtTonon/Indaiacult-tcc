@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement, useState } from "react";
 import { Menu, X } from "lucide-react";
 import LoginButton from "./LoginButton";
 import ToggleThemeButton from "./ToggleThemeButton";

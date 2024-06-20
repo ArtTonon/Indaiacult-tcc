@@ -6,7 +6,7 @@ import { sobre } from "../sobreMock";
 const SobreDetailPage = () => {
   const { id } = useParams();
 
-  const [Sobre, setSobre] = useState<Sobre | undefined>(sobre[0]);
+  const [Sobre] = useState<Sobre | undefined>(sobre[0]);
   if (!id || !Sobre) {
     return <Navigate to={"/sobre"} replace />;
   }

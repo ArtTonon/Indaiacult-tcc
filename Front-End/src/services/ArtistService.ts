@@ -1,7 +1,5 @@
 import { server } from "../server";
 import { Artista } from "../interfaces/ArtistInterface";
-import { stringify } from "querystring";
-import { error } from "console";
 
 export const seeAll = async () => {
   try {

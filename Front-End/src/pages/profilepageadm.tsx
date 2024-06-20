@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Artista } from "../interfaces/ArtistInterface";
 import { seeById } from "../services/ArtistService";

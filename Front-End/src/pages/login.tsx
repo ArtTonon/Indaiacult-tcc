@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { useState } from "react";
 import { FaInstagram, FaFacebook, FaGoogle } from "react-icons/fa";
 import "../css/login.css";
@@ -12,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { loginArtista } from "../services/ArtistService";
 
 const Login: React.FC = () => {
-  const { keepLoggedIn, artista } = useUser();
+  const { keepLoggedIn} = useUser();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
