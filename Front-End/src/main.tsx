@@ -31,6 +31,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <ThemeProvider>
           <Routes>
             <Route
+            path="/*"
               element={
                 <Layout>
                   <PrivateRoute element={<ArtistasPage />} path="/artists" />
@@ -67,7 +68,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route element={<SignUpArtist />} path="/cadastro-artista" />
             <Route element={<SenhaPage />} path="/senha" />
             <Route element={<CriarPage />} path="/criar" />
-            <Route element={<NotFound />} path="/*" />
+            {/* <Route element={<NotFound />} path="/*" /> */}
             <Route element={<LandingPage />} path="/" />
             <Route element={<LoginPage />} path="/login" />
             <Route element={<SignUpPage />} path="/cadastro" />
